@@ -1,10 +1,18 @@
 #
-# Fork-only helper: builds Linux + Windows binaries for perf testing in VMs.
-# Each run uploads one artifact per OS containing BOTH the patched build (this
-# branch) and the baseline build (src/generated_encoded_functions.cpp reverted
-# to origin/main), each with a matching duckdb CLI. The in-tree CLI statically
-# links the encodings extension, so the CLI alone is enough to benchmark; the
-# loadable .duckdb_extension files are included as well.
+# Fork-only helper: builds Linux + Windows loadable extensions for perf
+# testing in VMs. DuckDB is pinned to the latest release tag so the resulting
+# .duckdb_extension files LOAD into the official release CLI (exact version
+# match is required for C++ extensions). Each run uploads one artifact per OS
+# containing BOTH the patched build (this branch) and the baseline build
+# (src/generated_encoded_functions.cpp reverted to origin/main).
+#
+# Usage in a VM: download the official DUCKDB_RELEASE CLI, then
+#   duckdb -unsigned
+#   SET autoinstall_known_extensions=false; SET autoload_known_extensions=false;
+#   LOAD '<path>/patched/encodings.duckdb_extension';
+# Keep the files named encodings.duckdb_extension (entrypoint symbol is
+# derived from the filename); disabling autoload prevents silently falling
+# back to the official extension if the LOAD ever fails.
 #
 name: Perf Binaries (fork helper)
 on:
@@ -20,6 +28,11 @@ concurrency:
 env:
   GEN: ninja
   EXT_FLAGS: -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
+  DUCKDB_RELEASE: v1.5.5
+  # Without this the shallow tag fetch makes git describe fail inside the
+  # submodule and the build stamps v0.0.1, which the release CLI refuses to
+  # load (exact version match). The Makefile forwards this to CMake.
+  OVERRIDE_GIT_DESCRIBE: v1.5.5
 
 jobs:
   linux:
@@ -37,13 +50,17 @@ jobs:
         uses: hendrikmuhs/ccache-action@main
         continue-on-error: true
         with:
-          key: perf-binaries-linux
+          key: perf-binaries-linux-${{ env.DUCKDB_RELEASE }}
+
+      - name: Pin DuckDB to release tag
+        run: |
+          git -C duckdb fetch --depth 1 origin tag "$DUCKDB_RELEASE"
+          git -C duckdb checkout "$DUCKDB_RELEASE"
 
       - name: Build patched
         run: |
           make release
           mkdir -p staging/patched staging/baseline
-          cp build/release/duckdb staging/patched/
           cp build/release/extension/encodings/encodings.duckdb_extension staging/patched/
 
       - name: Build baseline (decode file reverted to main)
@@ -51,7 +68,6 @@ jobs:
           git fetch origin main
           git checkout origin/main -- src/generated_encoded_functions.cpp
           make release
-          cp build/release/duckdb staging/baseline/
           cp build/release/extension/encodings/encodings.duckdb_extension staging/baseline/
           git checkout HEAD -- src/generated_encoded_functions.cpp
 
@@ -81,7 +97,13 @@ jobs:
         uses: hendrikmuhs/ccache-action@main
         continue-on-error: true
         with:
-          key: perf-binaries-windows
+          key: perf-binaries-windows-${{ env.DUCKDB_RELEASE }}
+
+      - name: Pin DuckDB to release tag
+        shell: bash
+        run: |
+          git -C duckdb fetch --depth 1 origin tag "$DUCKDB_RELEASE"
+          git -C duckdb checkout "$DUCKDB_RELEASE"
 
       - name: Build patched
         shell: cmd
@@ -95,7 +117,6 @@ jobs:
         shell: bash
         run: |
           mkdir -p staging/patched staging/baseline
-          cp build/release/duckdb.exe staging/patched/
           cp build/release/extension/encodings/encodings.duckdb_extension staging/patched/
 
       - name: Revert decode file to main
@@ -113,7 +134,6 @@ jobs:
       - name: Stage baseline
         shell: bash
         run: |
-          cp build/release/duckdb.exe staging/baseline/
           cp build/release/extension/encodings/encodings.duckdb_extension staging/baseline/
           git checkout HEAD -- src/generated_encoded_functions.cpp
 

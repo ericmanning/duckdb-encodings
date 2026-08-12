@@ -1,0 +1,123 @@
+#
+# Fork-only helper: builds Linux + Windows binaries for perf testing in VMs.
+# Each run uploads one artifact per OS containing BOTH the patched build (this
+# branch) and the baseline build (src/generated_encoded_functions.cpp reverted
+# to origin/main), each with a matching duckdb CLI. The in-tree CLI statically
+# links the encodings extension, so the CLI alone is enough to benchmark; the
+# loadable .duckdb_extension files are included as well.
+#
+name: Perf Binaries (fork helper)
+on:
+  push:
+    branches:
+      - single-byte-direct-lookup
+  workflow_dispatch:
+
+concurrency:
+  group: perf-binaries-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GEN: ninja
+  EXT_FLAGS: -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
+
+jobs:
+  linux:
+    name: Linux (amd64)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+
+      - name: Install build tools
+        run: sudo apt-get update -qq && sudo apt-get install -y ninja-build
+
+      - name: Setup Ccache
+        uses: hendrikmuhs/ccache-action@main
+        continue-on-error: true
+        with:
+          key: perf-binaries-linux
+
+      - name: Build patched
+        run: |
+          make release
+          mkdir -p staging/patched staging/baseline
+          cp build/release/duckdb staging/patched/
+          cp build/release/extension/encodings/encodings.duckdb_extension staging/patched/
+
+      - name: Build baseline (decode file reverted to main)
+        run: |
+          git fetch origin main
+          git checkout origin/main -- src/generated_encoded_functions.cpp
+          make release
+          cp build/release/duckdb staging/baseline/
+          cp build/release/extension/encodings/encodings.duckdb_extension staging/baseline/
+          git checkout HEAD -- src/generated_encoded_functions.cpp
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: encodings-perf-linux_amd64
+          path: staging/
+
+  windows:
+    name: Windows (amd64)
+    runs-on: windows-latest
+    steps:
+      - name: Keep \n line endings
+        shell: bash
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.eol lf
+
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+
+      - name: Install Ninja build tool
+        run: choco install ninja -y
+
+      - name: Setup Ccache
+        uses: hendrikmuhs/ccache-action@main
+        continue-on-error: true
+        with:
+          key: perf-binaries-windows
+
+      - name: Build patched
+        shell: cmd
+        run: |
+          call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+          REM Rename link.exe to link-git.exe to avoid conflicts with git supplied linker.
+          if exist "C:\Program Files\Git\usr\bin\link.exe" mv "C:\Program Files\Git\usr\bin\link.exe" "C:\Program Files\Git\usr\bin\link-git.exe"
+          make release
+
+      - name: Stage patched
+        shell: bash
+        run: |
+          mkdir -p staging/patched staging/baseline
+          cp build/release/duckdb.exe staging/patched/
+          cp build/release/extension/encodings/encodings.duckdb_extension staging/patched/
+
+      - name: Revert decode file to main
+        shell: bash
+        run: |
+          git fetch origin main
+          git checkout origin/main -- src/generated_encoded_functions.cpp
+
+      - name: Build baseline
+        shell: cmd
+        run: |
+          call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+          make release
+
+      - name: Stage baseline
+        shell: bash
+        run: |
+          cp build/release/duckdb.exe staging/baseline/
+          cp build/release/extension/encodings/encodings.duckdb_extension staging/baseline/
+          git checkout HEAD -- src/generated_encoded_functions.cpp
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: encodings-perf-windows_amd64
+          path: staging/

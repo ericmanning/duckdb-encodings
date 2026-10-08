@@ -24,7 +24,7 @@ class Ibm_297_p100_1999ToUtf {
 public:
 	Ibm_297_p100_1999ToUtf() {};
 	const idx_t lookup_bytes = 1;
-	const idx_t max_bytes_per_byte = 3;
+	const idx_t max_bytes_per_byte = 2;
 	const string name = "ibm-297_P100-1999";
 	const idx_t size = 256;
 

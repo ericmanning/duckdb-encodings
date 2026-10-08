@@ -26,7 +26,7 @@ public:
 	const idx_t lookup_bytes = 2;
 	const idx_t max_bytes_per_byte = 3;
 	const string name = "glibc-IBM943-2.3.3";
-	const idx_t size = 9421;
+	const idx_t size = 9420;
 
 	static void Register(const DBConfig &config);
 };

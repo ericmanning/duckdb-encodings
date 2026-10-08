@@ -92,12 +92,22 @@ static const map_entry_encoding KOI8_U_to_utf8[] = {
     {1, "\xFC", 2, "\xD0\xAD"},     {1, "\xFD", 2, "\xD0\xA9"},     {1, "\xFE", 2, "\xD0\xA7"},
     {1, "\xFF", 2, "\xD0\xAA"},
 };
+
+// Aliases of "KOI8_U": the names Python accepts for its codec "koi8_u"
+static const char *const KOI8_U_aliases[] = {"koi8-u"};
+
 void Koi8_uToUtf::Register(const DBConfig &config) {
 	const Koi8_uToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                KOI8_U_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : KOI8_U_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      KOI8_U_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

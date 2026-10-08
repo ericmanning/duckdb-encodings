@@ -1,6 +1,6 @@
 # name: test/sql/shift_jis.test
 # description: Test a few shift-jis encoded files
-# group: [encodings]
+# group: [sql]
 
 require encodings
 

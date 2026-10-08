@@ -38,7 +38,7 @@ static const map_entry_encoding ibm_896_P100_1995_to_utf8[] = {
     {1, "\x5A", 3, "\xEF\xBE\x9A"}, {1, "\x5B", 3, "\xEF\xBE\x9B"}, {1, "\x5C", 3, "\xEF\xBE\x9C"},
     {1, "\x5D", 3, "\xEF\xBE\x9D"}, {1, "\x5E", 3, "\xEF\xBE\x9E"}, {1, "\x5F", 3, "\xEF\xBE\x9F"},
     {1, "\x60", 2, "\xC2\xA2"},     {1, "\x61", 2, "\xC2\xA3"},     {1, "\x62", 2, "\xC2\xAC"},
-    {1, "\x63", 3, "\xEF\xBC\xBC"}, {1, "\x64", 3, "\xEF\xBD\x9E"}, {1, "\x7F", 1, "\x7F"},
+    {1, "\x63", 1, "\x5C"},         {1, "\x64", 1, "\x7E"},         {1, "\x7F", 1, "\x7F"},
 };
 void Ibm_896_p100_1995ToUtf::Register(const DBConfig &config) {
 	const Ibm_896_p100_1995ToUtf generated_function;

@@ -24,7 +24,7 @@ class Windows_28591_2000ToUtf {
 public:
 	Windows_28591_2000ToUtf() {};
 	const idx_t lookup_bytes = 1;
-	const idx_t max_bytes_per_byte = 3;
+	const idx_t max_bytes_per_byte = 2;
 	const string name = "windows-28591-2000";
 	const idx_t size = 256;
 

@@ -24,7 +24,7 @@ class Iso8859_2ToUtf {
 public:
 	Iso8859_2ToUtf() {};
 	const idx_t lookup_bytes = 1;
-	const idx_t max_bytes_per_byte = 3;
+	const idx_t max_bytes_per_byte = 2;
 	const string name = "ISO8859_2";
 	const idx_t size = 256;
 

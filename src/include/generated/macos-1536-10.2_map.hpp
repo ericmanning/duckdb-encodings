@@ -24,7 +24,7 @@ class Macos_1536_10_2ToUtf {
 public:
 	Macos_1536_10_2ToUtf() {};
 	const idx_t lookup_bytes = 1;
-	const idx_t max_bytes_per_byte = 3;
+	const idx_t max_bytes_per_byte = 1;
 	const string name = "macos-1536-10.2";
 	const idx_t size = 128;
 

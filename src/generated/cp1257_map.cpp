@@ -88,12 +88,22 @@ static const map_entry_encoding CP1257_to_utf8[] = {
     {1, "\xFC", 2, "\xC3\xBC"},     {1, "\xFD", 2, "\xC5\xBC"},     {1, "\xFE", 2, "\xC5\xBE"},
     {1, "\xFF", 2, "\xCB\x99"},
 };
+
+// Aliases of "CP1257": the names Python accepts for its codec "cp1257"
+static const char *const CP1257_aliases[] = {"1257", "windows-1257", "windows_1257"};
+
 void Cp1257ToUtf::Register(const DBConfig &config) {
 	const Cp1257ToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                CP1257_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : CP1257_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      CP1257_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

@@ -92,12 +92,24 @@ static const map_entry_encoding iso_8859_14_1998_to_utf8[] = {
     {1, "\xFC", 2, "\xC3\xBC"},     {1, "\xFD", 2, "\xC3\xBD"},     {1, "\xFE", 2, "\xC5\xB7"},
     {1, "\xFF", 2, "\xC3\xBF"},
 };
+
+// Aliases of "iso-8859_14-1998": the names Python accepts for its codec "iso8859_14"
+static const char *const iso_8859_14_1998_aliases[] = {
+    "iso-8859-14",      "iso-8859-14-1998", "iso-celtic", "iso-ir-199", "iso8859-14", "iso8859_14",
+    "iso_8859_14_1998", "iso_celtic",       "iso_ir_199", "l8",         "latin8"};
+
 void Iso_8859_14_1998ToUtf::Register(const DBConfig &config) {
 	const Iso_8859_14_1998ToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                iso_8859_14_1998_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : iso_8859_14_1998_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      iso_8859_14_1998_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

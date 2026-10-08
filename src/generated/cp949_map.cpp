@@ -5688,12 +5688,22 @@ static const map_entry_encoding cp949_to_utf8[] = {
     {2, "\xFD\xF9", 3, "\xE7\x86\xBA"}, {2, "\xFD\xFA", 3, "\xE7\x8A\xA7"}, {2, "\xFD\xFB", 3, "\xE7\xA6\xA7"},
     {2, "\xFD\xFC", 3, "\xE7\xA8\x80"}, {2, "\xFD\xFD", 3, "\xE7\xBE\xB2"}, {2, "\xFD\xFE", 3, "\xE8\xA9\xB0"},
 };
+
+// Aliases of "cp949": the names Python accepts for its codec "cp949"
+static const char *const cp949_aliases[] = {"949", "ms949", "uhc"};
+
 void Cp949ToUtf::Register(const DBConfig &config) {
 	const Cp949ToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                cp949_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : cp949_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      cp949_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

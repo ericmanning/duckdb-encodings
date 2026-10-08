@@ -70,12 +70,24 @@ static const map_entry_encoding cp037_to_utf8[] = {
     {1, "\xF8", 1, "\x38"},     {1, "\xF9", 1, "\x39"},     {1, "\xFA", 2, "\xC2\xB3"}, {1, "\xFB", 2, "\xC3\x9B"},
     {1, "\xFC", 2, "\xC3\x9C"}, {1, "\xFD", 2, "\xC3\x99"}, {1, "\xFE", 2, "\xC3\x9A"}, {1, "\xFF", 2, "\xC2\x9F"},
 };
+
+// Aliases of "cp037": the names Python accepts for its codec "cp037"
+static const char *const cp037_aliases[] = {"037",          "csibm037",     "ebcdic-cp-ca", "ebcdic-cp-nl",
+                                            "ebcdic-cp-us", "ebcdic-cp-wt", "ebcdic_cp_ca", "ebcdic_cp_nl",
+                                            "ebcdic_cp_us", "ebcdic_cp_wt", "ibm037",       "ibm039"};
+
 void Cp037ToUtf::Register(const DBConfig &config) {
 	const Cp037ToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                cp037_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : cp037_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      cp037_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

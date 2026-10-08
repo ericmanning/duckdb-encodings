@@ -1,0 +1,58 @@
+# name: test/sql/cp932.test
+# description: Issue #19 - CP932 (Windows-31J) files: ASCII passes through unchanged, the CP932 repertoire decodes, and the names are discoverable
+# group: [sql]
+
+require encodings
+
+foreach enc windows-932-2000 cp932 ms932 windows-31j
+
+# A pure-ASCII CP932 file must read exactly like UTF-8: column names, values and sniffed types
+query III
+FROM read_csv('data/cp932/municipal.csv', encoding='${enc}')
+----
+013000	Sapporo	1000
+
+query I
+SELECT list(column_type) FROM (DESCRIBE FROM read_csv('data/cp932/municipal.csv', encoding='${enc}'))
+----
+[VARCHAR, VARCHAR, BIGINT]
+
+# NEC special characters, IBM extensions, Microsoft's 0x5C -> '\' and 0x7E -> '~', and U+FF5E / U+FF0D kept as-is
+query II
+FROM read_csv('data/cp932/notes.csv', encoding='${enc}')
+----
+Sapporo	ok
+Hakodate	㈱survey ①②③ 髙
+Otaru	C:\path~ ～－
+
+# One character from every CP932 block, as raw bytes
+query II
+FROM read_csv('data/cp932/blocks.csv', encoding='${enc}')
+----
+jis_l1	あいう漢字
+nec_toku	①②㈱
+nec_ibm	纊褜髙
+ibm_ext	ⅰ髙黑
+yen_full	￥
+
+endloop
+
+# Every printable ASCII byte decodes to itself
+query I
+SELECT v = '!#$%&''()*+-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~' FROM read_csv('data/cp932/ascii.csv', encoding='cp932', header=false, delim='', quote='', escape='', columns={'v': 'VARCHAR'})
+----
+true
+
+# The accepted encoding names can be listed
+query I
+SELECT count(*) > 1000 FROM duckdb_encodings()
+----
+true
+
+query IIII
+SELECT name, max_input_bytes, max_output_bytes, map_size FROM duckdb_encodings() WHERE name IN ('cp932', 'windows-31j', 'windows-932-2000', 'utf-8') ORDER BY name
+----
+cp932	2	3	9800
+utf-8	1	1	0
+windows-31j	2	3	9800
+windows-932-2000	2	3	9800

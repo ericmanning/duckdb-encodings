@@ -97,7 +97,7 @@ static const map_entry_encoding java_Cp949C_1_3_P_to_utf8[] = {
     {1, "\x59", 1, "\x59"},
     {1, "\x5A", 1, "\x5A"},
     {1, "\x5B", 1, "\x5B"},
-    {1, "\x5C", 3, "\xE2\x82\xA9"},
+    {1, "\x5C", 1, "\x5C"},
     {1, "\x5D", 1, "\x5D"},
     {1, "\x5E", 1, "\x5E"},
     {1, "\x5F", 1, "\x5F"},

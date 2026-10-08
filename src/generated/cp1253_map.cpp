@@ -86,12 +86,22 @@ static const map_entry_encoding CP1253_to_utf8[] = {
     {1, "\xFA", 2, "\xCF\x8A"},     {1, "\xFB", 2, "\xCF\x8B"},     {1, "\xFC", 2, "\xCF\x8C"},
     {1, "\xFD", 2, "\xCF\x8D"},     {1, "\xFE", 2, "\xCF\x8E"},
 };
+
+// Aliases of "CP1253": the names Python accepts for its codec "cp1253"
+static const char *const CP1253_aliases[] = {"1253", "windows-1253", "windows_1253"};
+
 void Cp1253ToUtf::Register(const DBConfig &config) {
 	const Cp1253ToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                CP1253_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : CP1253_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      CP1253_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

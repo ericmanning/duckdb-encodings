@@ -24,7 +24,7 @@ class Ibm_1114_p100_1995ToUtf {
 public:
 	Ibm_1114_p100_1995ToUtf() {};
 	const idx_t lookup_bytes = 1;
-	const idx_t max_bytes_per_byte = 3;
+	const idx_t max_bytes_per_byte = 1;
 	const string name = "ibm-1114_P100-1995";
 	const idx_t size = 128;
 

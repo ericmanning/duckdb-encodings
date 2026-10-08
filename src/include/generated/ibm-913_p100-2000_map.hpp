@@ -24,7 +24,7 @@ class Ibm_913_p100_2000ToUtf {
 public:
 	Ibm_913_p100_2000ToUtf() {};
 	const idx_t lookup_bytes = 1;
-	const idx_t max_bytes_per_byte = 3;
+	const idx_t max_bytes_per_byte = 2;
 	const string name = "ibm-913_P100-2000";
 	const idx_t size = 249;
 

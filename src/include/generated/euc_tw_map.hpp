@@ -23,10 +23,10 @@ namespace duckdb_encodings {
 class Euc_twToUtf {
 public:
 	Euc_twToUtf() {};
-	const idx_t lookup_bytes = 4;
+	const idx_t lookup_bytes = 2;
 	const idx_t max_bytes_per_byte = 3;
 	const string name = "EUC_TW";
-	const idx_t size = 17795;
+	const idx_t size = 5859;
 
 	static void Register(const DBConfig &config);
 };

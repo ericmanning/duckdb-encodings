@@ -26,7 +26,7 @@ public:
 	const idx_t lookup_bytes = 1;
 	const idx_t max_bytes_per_byte = 3;
 	const string name = "eucTH";
-	const idx_t size = 256;
+	const idx_t size = 215;
 
 	static void Register(const DBConfig &config);
 };

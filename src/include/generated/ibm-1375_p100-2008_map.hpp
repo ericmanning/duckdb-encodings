@@ -26,7 +26,7 @@ public:
 	const idx_t lookup_bytes = 2;
 	const idx_t max_bytes_per_byte = 4;
 	const string name = "ibm-1375_P100-2008";
-	const idx_t size = 19227;
+	const idx_t size = 19225;
 
 	static void Register(const DBConfig &config);
 };

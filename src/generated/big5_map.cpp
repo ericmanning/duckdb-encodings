@@ -6,35 +6,35 @@ namespace duckdb_encodings {
 // Generated from: aix-big5-4.3.6.ucm
 static const map_entry_encoding big5_to_utf8[] = {
     {1, "\x00", 1, "\x00"},
-    {1, "\x01", 3, "\xE2\x98\xBA"},
-    {1, "\x02", 3, "\xE2\x98\xBB"},
-    {1, "\x03", 3, "\xE2\x99\xA5"},
-    {1, "\x04", 3, "\xE2\x99\xA6"},
-    {1, "\x05", 3, "\xE2\x99\xA3"},
-    {1, "\x06", 3, "\xE2\x99\xA0"},
-    {1, "\x07", 3, "\xE2\x80\xA2"},
-    {1, "\x08", 3, "\xE2\x97\x98"},
-    {1, "\x09", 3, "\xEF\xBF\xAE"},
-    {1, "\x0A", 3, "\xE2\x97\x99"},
+    {1, "\x01", 1, "\x01"},
+    {1, "\x02", 1, "\x02"},
+    {1, "\x03", 1, "\x03"},
+    {1, "\x04", 1, "\x04"},
+    {1, "\x05", 1, "\x05"},
+    {1, "\x06", 1, "\x06"},
+    {1, "\x07", 1, "\x07"},
+    {1, "\x08", 1, "\x08"},
+    {1, "\x09", 1, "\x09"},
+    {1, "\x0A", 1, "\x0A"},
     {1, "\x0B", 1, "\x0B"},
     {1, "\x0C", 1, "\x0C"},
     {1, "\x0D", 1, "\x0D"},
-    {1, "\x0E", 3, "\xE2\x99\xAB"},
-    {1, "\x0F", 3, "\xE2\x98\xBC"},
-    {1, "\x10", 3, "\xE2\x96\xBA"},
-    {1, "\x11", 3, "\xE2\x97\x84"},
-    {1, "\x12", 3, "\xE2\x86\x95"},
-    {1, "\x13", 3, "\xE2\x80\xBC"},
+    {1, "\x0E", 1, "\x0E"},
+    {1, "\x0F", 1, "\x0F"},
+    {1, "\x10", 1, "\x10"},
+    {1, "\x11", 1, "\x11"},
+    {1, "\x12", 1, "\x12"},
+    {1, "\x13", 1, "\x13"},
     {1, "\x14", 1, "\x14"},
     {1, "\x15", 1, "\x15"},
-    {1, "\x16", 3, "\xE2\x96\xAC"},
-    {1, "\x17", 3, "\xE2\x86\xA8"},
-    {1, "\x18", 3, "\xEF\xBF\xAA"},
-    {1, "\x19", 3, "\xEF\xBF\xAC"},
-    {1, "\x1A", 3, "\xEF\xBF\xAB"},
-    {1, "\x1B", 3, "\xEF\xBF\xA9"},
+    {1, "\x16", 1, "\x16"},
+    {1, "\x17", 1, "\x17"},
+    {1, "\x18", 1, "\x18"},
+    {1, "\x19", 1, "\x19"},
+    {1, "\x1A", 1, "\x1A"},
+    {1, "\x1B", 1, "\x1B"},
     {1, "\x1C", 1, "\x1C"},
-    {1, "\x1D", 3, "\xE2\x86\x94"},
+    {1, "\x1D", 1, "\x1D"},
     {1, "\x1E", 1, "\x1E"},
     {1, "\x1F", 1, "\x1F"},
     {1, "\x20", 1, "\x20"},
@@ -132,7 +132,7 @@ static const map_entry_encoding big5_to_utf8[] = {
     {1, "\x7C", 1, "\x7C"},
     {1, "\x7D", 1, "\x7D"},
     {1, "\x7E", 1, "\x7E"},
-    {1, "\x7F", 2, "\xC3\xBF"},
+    {1, "\x7F", 1, "\x7F"},
     {2, "\x81\x40", 3, "\xEE\xBA\xB8"},
     {2, "\x81\x41", 3, "\xEE\xBA\xB9"},
     {2, "\x81\x42", 3, "\xEE\xBA\xBA"},
@@ -20209,12 +20209,22 @@ static const map_entry_encoding big5_to_utf8[] = {
     {2, "\xFE\xFD", 3, "\xEE\x8C\x8F"},
     {2, "\xFE\xFE", 3, "\xEE\x8C\x90"},
 };
+
+// Aliases of "big5": the names Python accepts for its codec "big5"
+static const char *const big5_aliases[] = {"big5-tw", "big5_tw", "csbig5", "x-mac-trad-chinese", "x_mac_trad_chinese"};
+
 void Big5ToUtf::Register(const DBConfig &config) {
 	const Big5ToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                big5_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : big5_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      big5_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

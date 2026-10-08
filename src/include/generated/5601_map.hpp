@@ -26,7 +26,7 @@ public:
 	const idx_t lookup_bytes = 2;
 	const idx_t max_bytes_per_byte = 3;
 	const string name = "5601";
-	const idx_t size = 8532;
+	const idx_t size = 8370;
 
 	static void Register(const DBConfig &config);
 };

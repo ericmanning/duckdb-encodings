@@ -1,6 +1,7 @@
 # DuckDB - Encodings
 
-This extension allows you to register all encodings available in the [ICU data repository](https://github.com/unicode-org/icu-data/tree/main/charset/data/ucm). It supports a total of 1,040 different encodings. The names of the encodings match the `<code_set_name>` option in each file. 
+This extension allows you to register all encodings available in the [ICU data repository](https://github.com/unicode-org/icu-data/tree/main/charset/data/ucm). It supports a total of 990 different encodings. The names of the encodings match the `<code_set_name>` option in each file.
+Stateful encodings (the SO/SI-switched EBCDIC tables such as `ibm-930`/`ibm-939`, and ISO-2022 variants) cannot be decoded with a stateless table lookup and are therefore not registered.
 It currently only performs encoding when reading data, converting from `<code_set_name>` to `UTF-8`.
 
 ## Usage
@@ -15,6 +16,14 @@ After that, all encodings are initialized in your database instance. To use them
 
 ```sql
 FROM read_csv('my_shift_jis.csv', encoding = 'shift_jis')
+```
+
+Besides the ICU `<code_set_name>`, every encoding that has a Python codec also accepts the names Python (and therefore tools such as `chardet`) use for it, e.g. `windows-1252`, `ISO-8859-4`, `iso8859-4`, `latin1`, `KOI8-R`, `EUC-KR` or `cp932`. Names are matched case-insensitively. Note that `latin1`/`iso-8859-1` map to the full ISO 8859-1 table (bytes `0x80`-`0x9F` decode to C1 control characters, as in Python), while DuckDB's built-in `latin-1` rejects those bytes.
+
+The full list of accepted names can be queried with `duckdb_encodings()`:
+
+```sql
+SELECT name FROM duckdb_encodings() WHERE name LIKE '%1252%';
 ```
 
 ## Building

@@ -26,7 +26,7 @@ public:
 	const idx_t lookup_bytes = 2;
 	const idx_t max_bytes_per_byte = 3;
 	const string name = "EUC_CN";
-	const idx_t size = 7496;
+	const idx_t size = 7495;
 
 	static void Register(const DBConfig &config);
 };

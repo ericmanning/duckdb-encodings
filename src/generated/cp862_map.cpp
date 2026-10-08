@@ -92,12 +92,22 @@ static const map_entry_encoding cp862_to_utf8[] = {
     {1, "\xFC", 3, "\xE2\x81\xBF"}, {1, "\xFD", 2, "\xC2\xB2"},     {1, "\xFE", 3, "\xE2\x96\xA0"},
     {1, "\xFF", 2, "\xC2\xA0"},
 };
+
+// Aliases of "cp862": the names Python accepts for its codec "cp862"
+static const char *const cp862_aliases[] = {"862", "cspc862latinhebrew", "ibm862"};
+
 void Cp862ToUtf::Register(const DBConfig &config) {
 	const Cp862ToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                cp862_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : cp862_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      cp862_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

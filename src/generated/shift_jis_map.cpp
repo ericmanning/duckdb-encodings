@@ -212,8 +212,8 @@ static const map_entry_encoding shift_jis_to_utf8[] = {
     {2, "\x81\x8E", 3, "\xE2\x84\x83"},
     {2, "\x81\x8F", 3, "\xEF\xBF\xA5"},
     {2, "\x81\x90", 3, "\xEF\xBC\x84"},
-    {2, "\x81\x91", 3, "\xEF\xBF\xA0"},
-    {2, "\x81\x92", 3, "\xEF\xBF\xA1"},
+    {2, "\x81\x91", 2, "\xC2\xA2"},
+    {2, "\x81\x92", 2, "\xC2\xA3"},
     {2, "\x81\x93", 3, "\xEF\xBC\x85"},
     {2, "\x81\x94", 3, "\xEF\xBC\x83"},
     {2, "\x81\x95", 3, "\xEF\xBC\x86"},
@@ -250,7 +250,7 @@ static const map_entry_encoding shift_jis_to_utf8[] = {
     {2, "\x81\xBF", 3, "\xE2\x88\xA9"},
     {2, "\x81\xC8", 3, "\xE2\x88\xA7"},
     {2, "\x81\xC9", 3, "\xE2\x88\xA8"},
-    {2, "\x81\xCA", 3, "\xEF\xBF\xA2"},
+    {2, "\x81\xCA", 2, "\xC2\xAC"},
     {2, "\x81\xCB", 3, "\xE2\x87\x92"},
     {2, "\x81\xCC", 3, "\xE2\x87\x94"},
     {2, "\x81\xCD", 3, "\xE2\x88\x80"},
@@ -7075,12 +7075,23 @@ static const map_entry_encoding shift_jis_to_utf8[] = {
     {2, "\xEA\xA3", 3, "\xE5\x87\x9C"},
     {2, "\xEA\xA4", 3, "\xE7\x86\x99"},
 };
+
+// Aliases of "shift_jis": the names Python accepts for its codec "shift_jis"
+static const char *const shift_jis_aliases[] = {"csshiftjis", "s-jis", "s_jis",          "shift-jis",
+                                                "shiftjis",   "sjis",  "x-mac-japanese", "x_mac_japanese"};
+
 void Shift_jisToUtf::Register(const DBConfig &config) {
 	const Shift_jisToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                shift_jis_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : shift_jis_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      shift_jis_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

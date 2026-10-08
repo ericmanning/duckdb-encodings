@@ -24,7 +24,7 @@ class Glibc_ibm922_2_3_3ToUtf {
 public:
 	Glibc_ibm922_2_3_3ToUtf() {};
 	const idx_t lookup_bytes = 1;
-	const idx_t max_bytes_per_byte = 3;
+	const idx_t max_bytes_per_byte = 2;
 	const string name = "glibc-IBM922-2.3.3";
 	const idx_t size = 256;
 

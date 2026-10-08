@@ -26,7 +26,7 @@ public:
 	const idx_t lookup_bytes = 3;
 	const idx_t max_bytes_per_byte = 3;
 	const string name = "ibm-33722_P12A_P12A-2009_U2";
-	const idx_t size = 9455;
+	const idx_t size = 9432;
 
 	static void Register(const DBConfig &config);
 };

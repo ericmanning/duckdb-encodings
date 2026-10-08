@@ -31,7 +31,7 @@ static const map_entry_encoding ibm_964_P110_1999_to_utf8[] = {
     {1, "\x17", 1, "\x17"},
     {1, "\x18", 1, "\x18"},
     {1, "\x19", 1, "\x19"},
-    {1, "\x1A", 2, "\xC3\xBF"},
+    {1, "\x1A", 1, "\x1A"},
     {1, "\x1B", 1, "\x1B"},
     {1, "\x1C", 1, "\x1C"},
     {1, "\x1D", 1, "\x1D"},
@@ -14471,7 +14471,7 @@ static const map_entry_encoding ibm_964_P110_1999_to_utf8[] = {
     {2, "\xA2\xC1", 3, "\xEF\xB9\xA4"},
     {2, "\xA2\xC2", 3, "\xEF\xB9\xA5"},
     {2, "\xA2\xC3", 3, "\xEF\xB9\xA6"},
-    {2, "\xA2\xC4", 3, "\xEF\xBD\x9E"},
+    {2, "\xA2\xC4", 3, "\xE2\x88\xBC"},
     {2, "\xA2\xC5", 3, "\xE2\x88\xA9"},
     {2, "\xA2\xC6", 3, "\xE2\x88\xAA"},
     {2, "\xA2\xC7", 3, "\xE2\x8A\xA5"},
@@ -20428,12 +20428,22 @@ static const map_entry_encoding ibm_964_P110_1999_to_utf8[] = {
     {2, "\xFD\xCA", 3, "\xE9\xB8\x9E"},
     {2, "\xFD\xCB", 3, "\xE7\xB1\xB2"},
 };
+
+// Aliases of "ibm-964_P110-1999": commonly used names
+static const char *const ibm_964_P110_1999_aliases[] = {"euc-tw", "euctw"};
+
 void Ibm_964_p110_1999ToUtf::Register(const DBConfig &config) {
 	const Ibm_964_p110_1999ToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                ibm_964_P110_1999_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : ibm_964_P110_1999_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      ibm_964_P110_1999_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

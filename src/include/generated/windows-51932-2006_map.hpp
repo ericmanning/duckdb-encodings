@@ -26,7 +26,7 @@ public:
 	const idx_t lookup_bytes = 2;
 	const idx_t max_bytes_per_byte = 3;
 	const string name = "windows-51932-2006";
-	const idx_t size = 13372;
+	const idx_t size = 12296;
 
 	static void Register(const DBConfig &config);
 };

@@ -14,7 +14,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm-1285_p100-1996_map.cpp
     src/generated/cp852_map.cpp
     src/generated/ibm-62383_p100-2007_map.cpp
-    src/generated/ibm-939_x120-1999_map.cpp
     src/generated/ibm-4945_p101-2000_map.cpp
     src/generated/iso_5427_map.cpp
     src/generated/hpux-cp1257-11.11_map.cpp
@@ -65,7 +64,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm-1166_p100-2002_map.cpp
     src/generated/ibm-1281_p100-1996_map.cpp
     src/generated/ibm-915_p100-1995_map.cpp
-    src/generated/ibm-1399_p110-2003_map.cpp
     src/generated/ibm-1374_p100-2005_map.cpp
     src/generated/windows-10079-2000_map.cpp
     src/generated/ibm-1275_p100-1995_map.cpp
@@ -78,7 +76,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/windows-20108-2000_map.cpp
     src/generated/ibm-5353_p100-1998_map.cpp
     src/generated/iso8859_1_map.cpp
-    src/generated/ibm-931_p120-1999_map.cpp
     src/generated/glibc-koi8_u-2.3.3_map.cpp
     src/generated/ibm-17240_p101-2000_map.cpp
     src/generated/mac_roman_map.cpp
@@ -92,7 +89,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/windows-10005-2000_map.cpp
     src/generated/ibm-1363_p10b-1998_map.cpp
     src/generated/windows-10004-2000_map.cpp
-    src/generated/ibm-1399_p100-1999_map.cpp
     src/generated/ibm-942_p12a_p12a-2000_u2_map.cpp
     src/generated/ibm-9049_p100-1999_map.cpp
     src/generated/ibm-1123_p100-1995_map.cpp
@@ -104,7 +100,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm-5050_p120-1999_map.cpp
     src/generated/hpux-cp1144-11.11_map.cpp
     src/generated/ibm-1156_p100-1999_map.cpp
-    src/generated/ibm-937_p110-1999_map.cpp
     src/generated/java-cp424-1.3_p_map.cpp
     src/generated/hpux-cp866-11.11_map.cpp
     src/generated/ibm-1126_p100_p100-1997_u3_map.cpp
@@ -146,7 +141,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/euc_jp_map.cpp
     src/generated/ibm-5012_p100-1999_map.cpp
     src/generated/windows-775-2000_map.cpp
-    src/generated/ibm-933_p110-1999_map.cpp
     src/generated/cp1252_map.cpp
     src/generated/iso-8859_10-1998_map.cpp
     src/generated/ibm-1105_p100-2003_map.cpp
@@ -179,13 +173,11 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm875_map.cpp
     src/generated/ibm-1258_p100-1997_map.cpp
     src/generated/ibm-1165_p101-2000_map.cpp
-    src/generated/ibm-5473_p100-2006_map.cpp
     src/generated/java-cp1258-1.3_p_map.cpp
     src/generated/ibm-1102_p100-2003_map.cpp
     src/generated/windows-20936-2000_map.cpp
     src/generated/latin_greek_map.cpp
     src/generated/ibm-943_p15a-2003_map.cpp
-    src/generated/ibm-1377_p100-2006_map.cpp
     src/generated/ibm-286_p100-2003_map.cpp
     src/generated/ibm-425_p101-2000_map.cpp
     src/generated/ibm-954_p101-2007_map.cpp
@@ -211,7 +203,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/iso-8859_7-1987_map.cpp
     src/generated/ibm-5478_p100-1995_map.cpp
     src/generated/java-ascii-1.3_p_map.cpp
-    src/generated/ibm-1364_p100-2007_map.cpp
     src/generated/ibm-1147_p100-1997_map.cpp
     src/generated/ibm-855_p100-1995_map.cpp
     src/generated/ibm-905_p100-1995_map.cpp
@@ -237,7 +228,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/windows-51949-2000_map.cpp
     src/generated/java-koi8_r-1.3_p_map.cpp
     src/generated/cp1254_map.cpp
-    src/generated/ibm-1388_p103-2001_map.cpp
     src/generated/ibm-9005_x100-2005_map.cpp
     src/generated/ibm-33722_p12a_p12a-2004_u2_map.cpp
     src/generated/windows-10081-2000_map.cpp
@@ -260,7 +250,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/8859_4_map.cpp
     src/generated/ibm297_map.cpp
     src/generated/hpux-cp874-11.11_map.cpp
-    src/generated/ibm-1371_x100-1999_map.cpp
     src/generated/ibm-851_p100-1995_map.cpp
     src/generated/iso-8859_9-1999_map.cpp
     src/generated/iso-8859_8-1999_map.cpp
@@ -282,7 +271,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm_858_map.cpp
     src/generated/cns-11643-1992_map.cpp
     src/generated/ibm-868_p100-1995_map.cpp
-    src/generated/java-cp939-1.3_p_map.cpp
     src/generated/ibm-953_p100-2000_map.cpp
     src/generated/java-cp278-1.3_p_map.cpp
     src/generated/hpux-cp1142-11.11_map.cpp
@@ -296,7 +284,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/java-cp1026-1.3_p_map.cpp
     src/generated/hpux-cp1148-11.11_map.cpp
     src/generated/windows-875-2000_map.cpp
-    src/generated/java-cp933-1.3_p_map.cpp
     src/generated/glibc-cp932-2.3.3_map.cpp
     src/generated/glibc-ksc5636-2.3.3_map.cpp
     src/generated/windows-20127-2000_map.cpp
@@ -311,7 +298,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm-5348_p100-1997_map.cpp
     src/generated/glibc-es-2.3.3_map.cpp
     src/generated/ibm-423_p100-1995_map.cpp
-    src/generated/ibm-1390_p110-2003_map.cpp
     src/generated/hpux-cp437-11.11_map.cpp
     src/generated/ibm-941_x11a-1996_map.cpp
     src/generated/macos-6-10.2_map.cpp
@@ -329,7 +315,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/windows-20838-2000_map.cpp
     src/generated/java-cp861-1.3_p_map.cpp
     src/generated/ibm-918_p100-1995_map.cpp
-    src/generated/ibm-930_x120-1999_map.cpp
     src/generated/ibm275_map.cpp
     src/generated/ibm-837_p100-2011_map.cpp
     src/generated/glibc-ibm943-2.3.3_map.cpp
@@ -401,9 +386,7 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/macos-519-10.2_map.cpp
     src/generated/macos-518-10.2_map.cpp
     src/generated/ibm278_map.cpp
-    src/generated/ibm-1390_p100-1999_map.cpp
     src/generated/cp1253_map.cpp
-    src/generated/ibm-13218_p100-1996_map.cpp
     src/generated/windows-20905-2000_map.cpp
     src/generated/ibm-838_p100-1995_map.cpp
     src/generated/ibm-293_p100-1995_map.cpp
@@ -425,7 +408,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm-1149_p100-1997_map.cpp
     src/generated/iso8859_6_map.cpp
     src/generated/ascii_map.cpp
-    src/generated/ibm-935_x110-1999_map.cpp
     src/generated/glibc-koi8_r-2.3.3_map.cpp
     src/generated/ibm-913_p100-2000_map.cpp
     src/generated/ibm-895_p100-1995_map.cpp
@@ -460,10 +442,8 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm-33722_p12a-1999_map.cpp
     src/generated/glibc-ecma_cyrillic-2.3.3_map.cpp
     src/generated/ibm-4933_p100-1996_map.cpp
-    src/generated/java-cp935-1.3_p_map.cpp
     src/generated/ibm-9064_p101-2000_map.cpp
     src/generated/ibm-891_p100-1995_map.cpp
-    src/generated/ibm-1364_p110-2007_map.cpp
     src/generated/ibm-1385_p100-1997_map.cpp
     src/generated/ibm-858_p100-1997_map.cpp
     src/generated/osd-ebcdic-df04-15_map.cpp
@@ -486,7 +466,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/iso_8859_1_map.cpp
     src/generated/glibc-ibm874-2.3.3_map.cpp
     src/generated/jisx0201.1976_gr_map.cpp
-    src/generated/ibm-5035_x120-1999_map.cpp
     src/generated/nats_dano_map.cpp
     src/generated/java-cp285-1.3_p_map.cpp
     src/generated/ibm-259_p100-1995_map.cpp
@@ -522,7 +501,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm-1129_p100-1997_map.cpp
     src/generated/hpux-cp861-11.11_map.cpp
     src/generated/windows-857-2000_map.cpp
-    src/generated/ibm-5026_x120-1999_map.cpp
     src/generated/windows-20105-2000_map.cpp
     src/generated/iso_10367_box_map.cpp
     src/generated/java-cp942-1.3_p_map.cpp
@@ -531,7 +509,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/iso85_map.cpp
     src/generated/macos-0_1-10.2_map.cpp
     src/generated/zh_cn.euc_map.cpp
-    src/generated/ibm-1388_p100-2024_map.cpp
     src/generated/ibm-5104_x110-1999_map.cpp
     src/generated/ibm-1168_p100-2002_map.cpp
     src/generated/hpux-cp1143-11.11_map.cpp
@@ -560,7 +537,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/windows-1148-2000_map.cpp
     src/generated/ibm-1041_p100-1995_map.cpp
     src/generated/cp865_map.cpp
-    src/generated/ibm-13676_p102-2001_map.cpp
     src/generated/java-cp33722-1.3_p_map.cpp
     src/generated/ibm-943_p130-1999_map.cpp
     src/generated/windows-10082-2000_map.cpp
@@ -589,7 +565,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm-4951_p100-1995_map.cpp
     src/generated/windows-1251-2000_map.cpp
     src/generated/ibm-301_p110-1997_map.cpp
-    src/generated/java-cp930-1.3_p_map.cpp
     src/generated/osd-ebcdic-df04-1_map.cpp
     src/generated/windows-37-2000_map.cpp
     src/generated/java-cp1025-1.3_p_map.cpp
@@ -613,7 +588,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/iso8859_15_map.cpp
     src/generated/windows-870-2000_map.cpp
     src/generated/ibm868_map.cpp
-    src/generated/ibm-1371_p100-1999_map.cpp
     src/generated/ibm-500_p100-1999_map.cpp
     src/generated/ibm-1124_x100-1996_map.cpp
     src/generated/macos-33-10.5_map.cpp
@@ -637,9 +611,7 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm-948_p110-1999_map.cpp
     src/generated/ibm-13140_p101-2000_map.cpp
     src/generated/windows-20273-2000_map.cpp
-    src/generated/zh_cn_cp935_map.cpp
     src/generated/ibm-941_x110-1996_map.cpp
-    src/generated/ibm-930_p120_p12a-2006_u2_map.cpp
     src/generated/ibm-806_p100-1998_map.cpp
     src/generated/mac_uk_map.cpp
     src/generated/iso_8859_9_map.cpp
@@ -652,7 +624,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm-1363_p100-1997_map.cpp
     src/generated/ibm-927_p100-1995_map.cpp
     src/generated/inis_map.cpp
-    src/generated/ibm-5035_p120_p12a-2005_u2_map.cpp
     src/generated/ibm-1088_p100-1995_map.cpp
     src/generated/ebcdic_at_de_a_map.cpp
     src/generated/ibm-13157_p101-2000_map.cpp
@@ -662,7 +633,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/osd-ebcdic-df03-irv_map.cpp
     src/generated/macos-517-10.2_map.cpp
     src/generated/macos-516-10.2_map.cpp
-    src/generated/java-iso2022kr-1.3_p_map.cpp
     src/generated/windows-51936-2000_map.cpp
     src/generated/glibc-it-2.3.3_map.cpp
     src/generated/hpux-cp864-11.11_map.cpp
@@ -688,7 +658,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm-1275_x100-1995_map.cpp
     src/generated/ibm904_map.cpp
     src/generated/java-sjis-1.3_p_map.cpp
-    src/generated/ibm-931_x120-1999_map.cpp
     src/generated/8859_3_map.cpp
     src/generated/ibm-21344_p101-2000_map.cpp
     src/generated/ibm-1257_p100-1995_map.cpp
@@ -700,7 +669,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/cp863_map.cpp
     src/generated/euc_cn_map.cpp
     src/generated/ibm-284_p100-1999_map.cpp
-    src/generated/ibm-939_p120-1999_map.cpp
     src/generated/iso81_map.cpp
     src/generated/ibm-33722_p12a_p12a-2009_u2_map.cpp
     src/generated/glibc-csa_z243.4_1985_2-2.3.3_map.cpp
@@ -729,7 +697,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/glibc-jus_i.b1.002-2.3.3_map.cpp
     src/generated/ibm-835_x100-1995_map.cpp
     src/generated/ibm-4904_p101-2000_map.cpp
-    src/generated/java-iso2022jp-1.3_p_map.cpp
     src/generated/ibm-9444_p100_p100-2005_ms_map.cpp
     src/generated/ibm-1148_p100-1997_map.cpp
     src/generated/java-cp869-1.3_p_map.cpp
@@ -743,7 +710,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/cns11643.1986_2_map.cpp
     src/generated/macos-1280-10.2_map.cpp
     src/generated/ibm-33722_p120-1999_map.cpp
-    src/generated/ibm-5486_p100-1999_map.cpp
     src/generated/glibc-ibm1133-2.3.3_map.cpp
     src/generated/java-cp1112-1.3_p_map.cpp
     src/generated/zh_tw_euc_map.cpp
@@ -751,29 +717,23 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/windows-866-2000_map.cpp
     src/generated/ibm281_map.cpp
     src/generated/macos-7_2-10.2_map.cpp
-    src/generated/ibm-939_p120_p12a-2005_u2_map.cpp
     src/generated/java-cp420-1.3_p_map.cpp
     src/generated/macos-7_3-10.2_map.cpp
     src/generated/hpux-cp1140-11.11_map.cpp
-    src/generated/ibm-933_x110-1999_map.cpp
     src/generated/java-ms932-1.3_p_map.cpp
     src/generated/ibm-848_p100-1999_map.cpp
     src/generated/glibc-sen_850200_b-2.3.3_map.cpp
     src/generated/ibm-9030_p100-1995_map.cpp
     src/generated/java-ms874-1.3_p_map.cpp
     src/generated/ibm-813_p100-1995_map.cpp
-    src/generated/ibm-25546_p100-1997_map.cpp
-    src/generated/ibm-9580_p110-1999_map.cpp
     src/generated/glibc-euc_cn-2.3.3_map.cpp
     src/generated/ibm-9448_x100-2005_map.cpp
     src/generated/java-iso8859_6-1.3_p_map.cpp
-    src/generated/ibm-5495_p100-1999_map.cpp
     src/generated/windows-858-2000_map.cpp
     src/generated/iso8859_8_map.cpp
     src/generated/ibm-871_p100-1999_map.cpp
     src/generated/iso646_us_map.cpp
     src/generated/ibm-1163_p100-1999_map.cpp
-    src/generated/ibm-937_x110-1999_map.cpp
     src/generated/cp1256_map.cpp
     src/generated/ibm-897_p100-1995_map.cpp
     src/generated/ibm-880_p100-1995_map.cpp
@@ -814,9 +774,7 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/mac_is_map.cpp
     src/generated/ibm_1129_map.cpp
     src/generated/ibm-17221_p100-2001_map.cpp
-    src/generated/ibm-1377_p100-2008_map.cpp
     src/generated/ibm-1154_p100-1999_map.cpp
-    src/generated/ibm-935_p110-1999_map.cpp
     src/generated/windows-1026-2000_map.cpp
     src/generated/windows-855-2000_map.cpp
     src/generated/windows-20106-2000_map.cpp
@@ -849,13 +807,11 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/java-cp863-1.3_p_map.cpp
     src/generated/ibm-963_p100-1995_map.cpp
     src/generated/ibm-833_p100-1995_map.cpp
-    src/generated/ibm-1388_p110-2000_map.cpp
     src/generated/ibm-5470_p100_p100-2005_ms_map.cpp
     src/generated/ibm-21427_p100-1999_map.cpp
     src/generated/glibc-iso_8859_8-2.3.3_map.cpp
     src/generated/jisx0201.1976_0_map.cpp
     src/generated/hpux-cp850-11.11_map.cpp
-    src/generated/ibm-5026_p120-1999_map.cpp
     src/generated/ibm420_map.cpp
     src/generated/macos-1286-10.2_map.cpp
     src/generated/ibm-5351_p100-1998_map.cpp
@@ -886,7 +842,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/cp869_map.cpp
     src/generated/hpux-roc15-11.11_map.cpp
     src/generated/glibc-iso_ir_209-2.3.3_map.cpp
-    src/generated/ibm-5035_p120-1999_map.cpp
     src/generated/hpux-cp1147-11.11_map.cpp
     src/generated/ebcdic_es_map.cpp
     src/generated/ibm-5123_p100-1999_map.cpp
@@ -916,12 +871,10 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/ibm-1362_p110-1999_map.cpp
     src/generated/ibm905_map.cpp
     src/generated/ibm-918_x100-1995_map.cpp
-    src/generated/ibm-930_p120-1999_map.cpp
     src/generated/windows-437-2000_map.cpp
     src/generated/ibm-4899_p100-1998_map.cpp
     src/generated/iso_5427_ext_map.cpp
     src/generated/windows-1047-2000_map.cpp
-    src/generated/java-cp937-1.3_p_map.cpp
     src/generated/ibm-5352_p100-1998_map.cpp
     src/generated/ibm_856_map.cpp
     src/generated/ibm-9027_x100-1999_map.cpp
@@ -990,7 +943,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/java-cp850-1.3_p_map.cpp
     src/generated/glibc-ibm1132-2.3.3_map.cpp
     src/generated/ibm-1153_p100-1999_map.cpp
-    src/generated/ibm-1377_p100_p100-2006_u3_map.cpp
     src/generated/java-cp037-1.3_p_map.cpp
     src/generated/hpux-cp863-11.11_map.cpp
     src/generated/ibm-5048_p100-1995_map.cpp
@@ -1008,7 +960,6 @@ set(EXTENSION_SOURCES src/encodings_extension.cpp
     src/generated/glibc-armscii_8-2.3.3_map.cpp
     src/generated/solaris-zh_hk.hkscs-5.9_map.cpp
     src/generated/windows-20932-2000_map.cpp
-    src/generated/zh_tw_cp937_map.cpp
     src/generated/ibm-1375_p100-2006_map.cpp
     src/generated/windows-20290-2000_map.cpp
     src/generated/csn_369103_map.cpp

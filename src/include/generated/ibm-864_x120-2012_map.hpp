@@ -26,7 +26,7 @@ public:
 	const idx_t lookup_bytes = 1;
 	const idx_t max_bytes_per_byte = 3;
 	const string name = "ibm-864_X120-2012";
-	const idx_t size = 252;
+	const idx_t size = 251;
 
 	static void Register(const DBConfig &config);
 };

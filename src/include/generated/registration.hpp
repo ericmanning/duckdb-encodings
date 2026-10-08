@@ -16,7 +16,6 @@
 #include "generated/ibm-1285_p100-1996_map.hpp"
 #include "generated/cp852_map.hpp"
 #include "generated/ibm-62383_p100-2007_map.hpp"
-#include "generated/ibm-939_x120-1999_map.hpp"
 #include "generated/ibm-4945_p101-2000_map.hpp"
 #include "generated/iso_5427_map.hpp"
 #include "generated/hpux-cp1257-11.11_map.hpp"
@@ -67,7 +66,6 @@
 #include "generated/ibm-1166_p100-2002_map.hpp"
 #include "generated/ibm-1281_p100-1996_map.hpp"
 #include "generated/ibm-915_p100-1995_map.hpp"
-#include "generated/ibm-1399_p110-2003_map.hpp"
 #include "generated/ibm-1374_p100-2005_map.hpp"
 #include "generated/windows-10079-2000_map.hpp"
 #include "generated/ibm-1275_p100-1995_map.hpp"
@@ -80,7 +78,6 @@
 #include "generated/windows-20108-2000_map.hpp"
 #include "generated/ibm-5353_p100-1998_map.hpp"
 #include "generated/iso8859_1_map.hpp"
-#include "generated/ibm-931_p120-1999_map.hpp"
 #include "generated/glibc-koi8_u-2.3.3_map.hpp"
 #include "generated/ibm-17240_p101-2000_map.hpp"
 #include "generated/mac_roman_map.hpp"
@@ -94,7 +91,6 @@
 #include "generated/windows-10005-2000_map.hpp"
 #include "generated/ibm-1363_p10b-1998_map.hpp"
 #include "generated/windows-10004-2000_map.hpp"
-#include "generated/ibm-1399_p100-1999_map.hpp"
 #include "generated/ibm-942_p12a_p12a-2000_u2_map.hpp"
 #include "generated/ibm-9049_p100-1999_map.hpp"
 #include "generated/ibm-1123_p100-1995_map.hpp"
@@ -106,7 +102,6 @@
 #include "generated/ibm-5050_p120-1999_map.hpp"
 #include "generated/hpux-cp1144-11.11_map.hpp"
 #include "generated/ibm-1156_p100-1999_map.hpp"
-#include "generated/ibm-937_p110-1999_map.hpp"
 #include "generated/java-cp424-1.3_p_map.hpp"
 #include "generated/hpux-cp866-11.11_map.hpp"
 #include "generated/ibm-1126_p100_p100-1997_u3_map.hpp"
@@ -148,7 +143,6 @@
 #include "generated/euc_jp_map.hpp"
 #include "generated/ibm-5012_p100-1999_map.hpp"
 #include "generated/windows-775-2000_map.hpp"
-#include "generated/ibm-933_p110-1999_map.hpp"
 #include "generated/cp1252_map.hpp"
 #include "generated/iso-8859_10-1998_map.hpp"
 #include "generated/ibm-1105_p100-2003_map.hpp"
@@ -181,13 +175,11 @@
 #include "generated/ibm875_map.hpp"
 #include "generated/ibm-1258_p100-1997_map.hpp"
 #include "generated/ibm-1165_p101-2000_map.hpp"
-#include "generated/ibm-5473_p100-2006_map.hpp"
 #include "generated/java-cp1258-1.3_p_map.hpp"
 #include "generated/ibm-1102_p100-2003_map.hpp"
 #include "generated/windows-20936-2000_map.hpp"
 #include "generated/latin_greek_map.hpp"
 #include "generated/ibm-943_p15a-2003_map.hpp"
-#include "generated/ibm-1377_p100-2006_map.hpp"
 #include "generated/ibm-286_p100-2003_map.hpp"
 #include "generated/ibm-425_p101-2000_map.hpp"
 #include "generated/ibm-954_p101-2007_map.hpp"
@@ -213,7 +205,6 @@
 #include "generated/iso-8859_7-1987_map.hpp"
 #include "generated/ibm-5478_p100-1995_map.hpp"
 #include "generated/java-ascii-1.3_p_map.hpp"
-#include "generated/ibm-1364_p100-2007_map.hpp"
 #include "generated/ibm-1147_p100-1997_map.hpp"
 #include "generated/ibm-855_p100-1995_map.hpp"
 #include "generated/ibm-905_p100-1995_map.hpp"
@@ -239,7 +230,6 @@
 #include "generated/windows-51949-2000_map.hpp"
 #include "generated/java-koi8_r-1.3_p_map.hpp"
 #include "generated/cp1254_map.hpp"
-#include "generated/ibm-1388_p103-2001_map.hpp"
 #include "generated/ibm-9005_x100-2005_map.hpp"
 #include "generated/ibm-33722_p12a_p12a-2004_u2_map.hpp"
 #include "generated/windows-10081-2000_map.hpp"
@@ -262,7 +252,6 @@
 #include "generated/8859_4_map.hpp"
 #include "generated/ibm297_map.hpp"
 #include "generated/hpux-cp874-11.11_map.hpp"
-#include "generated/ibm-1371_x100-1999_map.hpp"
 #include "generated/ibm-851_p100-1995_map.hpp"
 #include "generated/iso-8859_9-1999_map.hpp"
 #include "generated/iso-8859_8-1999_map.hpp"
@@ -284,7 +273,6 @@
 #include "generated/ibm_858_map.hpp"
 #include "generated/cns-11643-1992_map.hpp"
 #include "generated/ibm-868_p100-1995_map.hpp"
-#include "generated/java-cp939-1.3_p_map.hpp"
 #include "generated/ibm-953_p100-2000_map.hpp"
 #include "generated/java-cp278-1.3_p_map.hpp"
 #include "generated/hpux-cp1142-11.11_map.hpp"
@@ -298,7 +286,6 @@
 #include "generated/java-cp1026-1.3_p_map.hpp"
 #include "generated/hpux-cp1148-11.11_map.hpp"
 #include "generated/windows-875-2000_map.hpp"
-#include "generated/java-cp933-1.3_p_map.hpp"
 #include "generated/glibc-cp932-2.3.3_map.hpp"
 #include "generated/glibc-ksc5636-2.3.3_map.hpp"
 #include "generated/windows-20127-2000_map.hpp"
@@ -313,7 +300,6 @@
 #include "generated/ibm-5348_p100-1997_map.hpp"
 #include "generated/glibc-es-2.3.3_map.hpp"
 #include "generated/ibm-423_p100-1995_map.hpp"
-#include "generated/ibm-1390_p110-2003_map.hpp"
 #include "generated/hpux-cp437-11.11_map.hpp"
 #include "generated/ibm-941_x11a-1996_map.hpp"
 #include "generated/macos-6-10.2_map.hpp"
@@ -331,7 +317,6 @@
 #include "generated/windows-20838-2000_map.hpp"
 #include "generated/java-cp861-1.3_p_map.hpp"
 #include "generated/ibm-918_p100-1995_map.hpp"
-#include "generated/ibm-930_x120-1999_map.hpp"
 #include "generated/ibm275_map.hpp"
 #include "generated/ibm-837_p100-2011_map.hpp"
 #include "generated/glibc-ibm943-2.3.3_map.hpp"
@@ -403,9 +388,7 @@
 #include "generated/macos-519-10.2_map.hpp"
 #include "generated/macos-518-10.2_map.hpp"
 #include "generated/ibm278_map.hpp"
-#include "generated/ibm-1390_p100-1999_map.hpp"
 #include "generated/cp1253_map.hpp"
-#include "generated/ibm-13218_p100-1996_map.hpp"
 #include "generated/windows-20905-2000_map.hpp"
 #include "generated/ibm-838_p100-1995_map.hpp"
 #include "generated/ibm-293_p100-1995_map.hpp"
@@ -427,7 +410,6 @@
 #include "generated/ibm-1149_p100-1997_map.hpp"
 #include "generated/iso8859_6_map.hpp"
 #include "generated/ascii_map.hpp"
-#include "generated/ibm-935_x110-1999_map.hpp"
 #include "generated/glibc-koi8_r-2.3.3_map.hpp"
 #include "generated/ibm-913_p100-2000_map.hpp"
 #include "generated/ibm-895_p100-1995_map.hpp"
@@ -462,10 +444,8 @@
 #include "generated/ibm-33722_p12a-1999_map.hpp"
 #include "generated/glibc-ecma_cyrillic-2.3.3_map.hpp"
 #include "generated/ibm-4933_p100-1996_map.hpp"
-#include "generated/java-cp935-1.3_p_map.hpp"
 #include "generated/ibm-9064_p101-2000_map.hpp"
 #include "generated/ibm-891_p100-1995_map.hpp"
-#include "generated/ibm-1364_p110-2007_map.hpp"
 #include "generated/ibm-1385_p100-1997_map.hpp"
 #include "generated/ibm-858_p100-1997_map.hpp"
 #include "generated/osd-ebcdic-df04-15_map.hpp"
@@ -488,7 +468,6 @@
 #include "generated/iso_8859_1_map.hpp"
 #include "generated/glibc-ibm874-2.3.3_map.hpp"
 #include "generated/jisx0201.1976_gr_map.hpp"
-#include "generated/ibm-5035_x120-1999_map.hpp"
 #include "generated/nats_dano_map.hpp"
 #include "generated/java-cp285-1.3_p_map.hpp"
 #include "generated/ibm-259_p100-1995_map.hpp"
@@ -524,7 +503,6 @@
 #include "generated/ibm-1129_p100-1997_map.hpp"
 #include "generated/hpux-cp861-11.11_map.hpp"
 #include "generated/windows-857-2000_map.hpp"
-#include "generated/ibm-5026_x120-1999_map.hpp"
 #include "generated/windows-20105-2000_map.hpp"
 #include "generated/iso_10367_box_map.hpp"
 #include "generated/java-cp942-1.3_p_map.hpp"
@@ -533,7 +511,6 @@
 #include "generated/iso85_map.hpp"
 #include "generated/macos-0_1-10.2_map.hpp"
 #include "generated/zh_cn.euc_map.hpp"
-#include "generated/ibm-1388_p100-2024_map.hpp"
 #include "generated/ibm-5104_x110-1999_map.hpp"
 #include "generated/ibm-1168_p100-2002_map.hpp"
 #include "generated/hpux-cp1143-11.11_map.hpp"
@@ -562,7 +539,6 @@
 #include "generated/windows-1148-2000_map.hpp"
 #include "generated/ibm-1041_p100-1995_map.hpp"
 #include "generated/cp865_map.hpp"
-#include "generated/ibm-13676_p102-2001_map.hpp"
 #include "generated/java-cp33722-1.3_p_map.hpp"
 #include "generated/ibm-943_p130-1999_map.hpp"
 #include "generated/windows-10082-2000_map.hpp"
@@ -591,7 +567,6 @@
 #include "generated/ibm-4951_p100-1995_map.hpp"
 #include "generated/windows-1251-2000_map.hpp"
 #include "generated/ibm-301_p110-1997_map.hpp"
-#include "generated/java-cp930-1.3_p_map.hpp"
 #include "generated/osd-ebcdic-df04-1_map.hpp"
 #include "generated/windows-37-2000_map.hpp"
 #include "generated/java-cp1025-1.3_p_map.hpp"
@@ -615,7 +590,6 @@
 #include "generated/iso8859_15_map.hpp"
 #include "generated/windows-870-2000_map.hpp"
 #include "generated/ibm868_map.hpp"
-#include "generated/ibm-1371_p100-1999_map.hpp"
 #include "generated/ibm-500_p100-1999_map.hpp"
 #include "generated/ibm-1124_x100-1996_map.hpp"
 #include "generated/macos-33-10.5_map.hpp"
@@ -639,9 +613,7 @@
 #include "generated/ibm-948_p110-1999_map.hpp"
 #include "generated/ibm-13140_p101-2000_map.hpp"
 #include "generated/windows-20273-2000_map.hpp"
-#include "generated/zh_cn_cp935_map.hpp"
 #include "generated/ibm-941_x110-1996_map.hpp"
-#include "generated/ibm-930_p120_p12a-2006_u2_map.hpp"
 #include "generated/ibm-806_p100-1998_map.hpp"
 #include "generated/mac_uk_map.hpp"
 #include "generated/iso_8859_9_map.hpp"
@@ -654,7 +626,6 @@
 #include "generated/ibm-1363_p100-1997_map.hpp"
 #include "generated/ibm-927_p100-1995_map.hpp"
 #include "generated/inis_map.hpp"
-#include "generated/ibm-5035_p120_p12a-2005_u2_map.hpp"
 #include "generated/ibm-1088_p100-1995_map.hpp"
 #include "generated/ebcdic_at_de_a_map.hpp"
 #include "generated/ibm-13157_p101-2000_map.hpp"
@@ -664,7 +635,6 @@
 #include "generated/osd-ebcdic-df03-irv_map.hpp"
 #include "generated/macos-517-10.2_map.hpp"
 #include "generated/macos-516-10.2_map.hpp"
-#include "generated/java-iso2022kr-1.3_p_map.hpp"
 #include "generated/windows-51936-2000_map.hpp"
 #include "generated/glibc-it-2.3.3_map.hpp"
 #include "generated/hpux-cp864-11.11_map.hpp"
@@ -690,7 +660,6 @@
 #include "generated/ibm-1275_x100-1995_map.hpp"
 #include "generated/ibm904_map.hpp"
 #include "generated/java-sjis-1.3_p_map.hpp"
-#include "generated/ibm-931_x120-1999_map.hpp"
 #include "generated/8859_3_map.hpp"
 #include "generated/ibm-21344_p101-2000_map.hpp"
 #include "generated/ibm-1257_p100-1995_map.hpp"
@@ -702,7 +671,6 @@
 #include "generated/cp863_map.hpp"
 #include "generated/euc_cn_map.hpp"
 #include "generated/ibm-284_p100-1999_map.hpp"
-#include "generated/ibm-939_p120-1999_map.hpp"
 #include "generated/iso81_map.hpp"
 #include "generated/ibm-33722_p12a_p12a-2009_u2_map.hpp"
 #include "generated/glibc-csa_z243.4_1985_2-2.3.3_map.hpp"
@@ -731,7 +699,6 @@
 #include "generated/glibc-jus_i.b1.002-2.3.3_map.hpp"
 #include "generated/ibm-835_x100-1995_map.hpp"
 #include "generated/ibm-4904_p101-2000_map.hpp"
-#include "generated/java-iso2022jp-1.3_p_map.hpp"
 #include "generated/ibm-9444_p100_p100-2005_ms_map.hpp"
 #include "generated/ibm-1148_p100-1997_map.hpp"
 #include "generated/java-cp869-1.3_p_map.hpp"
@@ -745,7 +712,6 @@
 #include "generated/cns11643.1986_2_map.hpp"
 #include "generated/macos-1280-10.2_map.hpp"
 #include "generated/ibm-33722_p120-1999_map.hpp"
-#include "generated/ibm-5486_p100-1999_map.hpp"
 #include "generated/glibc-ibm1133-2.3.3_map.hpp"
 #include "generated/java-cp1112-1.3_p_map.hpp"
 #include "generated/zh_tw_euc_map.hpp"
@@ -753,29 +719,23 @@
 #include "generated/windows-866-2000_map.hpp"
 #include "generated/ibm281_map.hpp"
 #include "generated/macos-7_2-10.2_map.hpp"
-#include "generated/ibm-939_p120_p12a-2005_u2_map.hpp"
 #include "generated/java-cp420-1.3_p_map.hpp"
 #include "generated/macos-7_3-10.2_map.hpp"
 #include "generated/hpux-cp1140-11.11_map.hpp"
-#include "generated/ibm-933_x110-1999_map.hpp"
 #include "generated/java-ms932-1.3_p_map.hpp"
 #include "generated/ibm-848_p100-1999_map.hpp"
 #include "generated/glibc-sen_850200_b-2.3.3_map.hpp"
 #include "generated/ibm-9030_p100-1995_map.hpp"
 #include "generated/java-ms874-1.3_p_map.hpp"
 #include "generated/ibm-813_p100-1995_map.hpp"
-#include "generated/ibm-25546_p100-1997_map.hpp"
-#include "generated/ibm-9580_p110-1999_map.hpp"
 #include "generated/glibc-euc_cn-2.3.3_map.hpp"
 #include "generated/ibm-9448_x100-2005_map.hpp"
 #include "generated/java-iso8859_6-1.3_p_map.hpp"
-#include "generated/ibm-5495_p100-1999_map.hpp"
 #include "generated/windows-858-2000_map.hpp"
 #include "generated/iso8859_8_map.hpp"
 #include "generated/ibm-871_p100-1999_map.hpp"
 #include "generated/iso646_us_map.hpp"
 #include "generated/ibm-1163_p100-1999_map.hpp"
-#include "generated/ibm-937_x110-1999_map.hpp"
 #include "generated/cp1256_map.hpp"
 #include "generated/ibm-897_p100-1995_map.hpp"
 #include "generated/ibm-880_p100-1995_map.hpp"
@@ -816,9 +776,7 @@
 #include "generated/mac_is_map.hpp"
 #include "generated/ibm_1129_map.hpp"
 #include "generated/ibm-17221_p100-2001_map.hpp"
-#include "generated/ibm-1377_p100-2008_map.hpp"
 #include "generated/ibm-1154_p100-1999_map.hpp"
-#include "generated/ibm-935_p110-1999_map.hpp"
 #include "generated/windows-1026-2000_map.hpp"
 #include "generated/windows-855-2000_map.hpp"
 #include "generated/windows-20106-2000_map.hpp"
@@ -851,13 +809,11 @@
 #include "generated/java-cp863-1.3_p_map.hpp"
 #include "generated/ibm-963_p100-1995_map.hpp"
 #include "generated/ibm-833_p100-1995_map.hpp"
-#include "generated/ibm-1388_p110-2000_map.hpp"
 #include "generated/ibm-5470_p100_p100-2005_ms_map.hpp"
 #include "generated/ibm-21427_p100-1999_map.hpp"
 #include "generated/glibc-iso_8859_8-2.3.3_map.hpp"
 #include "generated/jisx0201.1976_0_map.hpp"
 #include "generated/hpux-cp850-11.11_map.hpp"
-#include "generated/ibm-5026_p120-1999_map.hpp"
 #include "generated/ibm420_map.hpp"
 #include "generated/macos-1286-10.2_map.hpp"
 #include "generated/ibm-5351_p100-1998_map.hpp"
@@ -888,7 +844,6 @@
 #include "generated/cp869_map.hpp"
 #include "generated/hpux-roc15-11.11_map.hpp"
 #include "generated/glibc-iso_ir_209-2.3.3_map.hpp"
-#include "generated/ibm-5035_p120-1999_map.hpp"
 #include "generated/hpux-cp1147-11.11_map.hpp"
 #include "generated/ebcdic_es_map.hpp"
 #include "generated/ibm-5123_p100-1999_map.hpp"
@@ -918,12 +873,10 @@
 #include "generated/ibm-1362_p110-1999_map.hpp"
 #include "generated/ibm905_map.hpp"
 #include "generated/ibm-918_x100-1995_map.hpp"
-#include "generated/ibm-930_p120-1999_map.hpp"
 #include "generated/windows-437-2000_map.hpp"
 #include "generated/ibm-4899_p100-1998_map.hpp"
 #include "generated/iso_5427_ext_map.hpp"
 #include "generated/windows-1047-2000_map.hpp"
-#include "generated/java-cp937-1.3_p_map.hpp"
 #include "generated/ibm-5352_p100-1998_map.hpp"
 #include "generated/ibm_856_map.hpp"
 #include "generated/ibm-9027_x100-1999_map.hpp"
@@ -992,7 +945,6 @@
 #include "generated/java-cp850-1.3_p_map.hpp"
 #include "generated/glibc-ibm1132-2.3.3_map.hpp"
 #include "generated/ibm-1153_p100-1999_map.hpp"
-#include "generated/ibm-1377_p100_p100-2006_u3_map.hpp"
 #include "generated/java-cp037-1.3_p_map.hpp"
 #include "generated/hpux-cp863-11.11_map.hpp"
 #include "generated/ibm-5048_p100-1995_map.hpp"
@@ -1010,7 +962,6 @@
 #include "generated/glibc-armscii_8-2.3.3_map.hpp"
 #include "generated/solaris-zh_hk.hkscs-5.9_map.hpp"
 #include "generated/windows-20932-2000_map.hpp"
-#include "generated/zh_tw_cp937_map.hpp"
 #include "generated/ibm-1375_p100-2006_map.hpp"
 #include "generated/windows-20290-2000_map.hpp"
 #include "generated/csn_369103_map.hpp"
@@ -1061,7 +1012,6 @@ public:
 		Ibm_1285_p100_1996ToUtf::Register(config);
 		Cp852ToUtf::Register(config);
 		Ibm_62383_p100_2007ToUtf::Register(config);
-		Ibm_939_x120_1999ToUtf::Register(config);
 		Ibm_4945_p101_2000ToUtf::Register(config);
 		Iso_5427ToUtf::Register(config);
 		Hpux_cp1257_11_11ToUtf::Register(config);
@@ -1112,7 +1062,6 @@ public:
 		Ibm_1166_p100_2002ToUtf::Register(config);
 		Ibm_1281_p100_1996ToUtf::Register(config);
 		Ibm_915_p100_1995ToUtf::Register(config);
-		Ibm_1399_p110_2003ToUtf::Register(config);
 		Ibm_1374_p100_2005ToUtf::Register(config);
 		Windows_10079_2000ToUtf::Register(config);
 		Ibm_1275_p100_1995ToUtf::Register(config);
@@ -1125,7 +1074,6 @@ public:
 		Windows_20108_2000ToUtf::Register(config);
 		Ibm_5353_p100_1998ToUtf::Register(config);
 		Iso8859_1ToUtf::Register(config);
-		Ibm_931_p120_1999ToUtf::Register(config);
 		Glibc_koi8_u_2_3_3ToUtf::Register(config);
 		Ibm_17240_p101_2000ToUtf::Register(config);
 		Mac_romanToUtf::Register(config);
@@ -1139,7 +1087,6 @@ public:
 		Windows_10005_2000ToUtf::Register(config);
 		Ibm_1363_p10b_1998ToUtf::Register(config);
 		Windows_10004_2000ToUtf::Register(config);
-		Ibm_1399_p100_1999ToUtf::Register(config);
 		Ibm_942_p12a_p12a_2000_u2ToUtf::Register(config);
 		Ibm_9049_p100_1999ToUtf::Register(config);
 		Ibm_1123_p100_1995ToUtf::Register(config);
@@ -1151,7 +1098,6 @@ public:
 		Ibm_5050_p120_1999ToUtf::Register(config);
 		Hpux_cp1144_11_11ToUtf::Register(config);
 		Ibm_1156_p100_1999ToUtf::Register(config);
-		Ibm_937_p110_1999ToUtf::Register(config);
 		Java_cp424_1_3_pToUtf::Register(config);
 		Hpux_cp866_11_11ToUtf::Register(config);
 		Ibm_1126_p100_p100_1997_u3ToUtf::Register(config);
@@ -1193,7 +1139,6 @@ public:
 		Euc_jpToUtf::Register(config);
 		Ibm_5012_p100_1999ToUtf::Register(config);
 		Windows_775_2000ToUtf::Register(config);
-		Ibm_933_p110_1999ToUtf::Register(config);
 		Cp1252ToUtf::Register(config);
 		Iso_8859_10_1998ToUtf::Register(config);
 		Ibm_1105_p100_2003ToUtf::Register(config);
@@ -1226,13 +1171,11 @@ public:
 		Ibm875ToUtf::Register(config);
 		Ibm_1258_p100_1997ToUtf::Register(config);
 		Ibm_1165_p101_2000ToUtf::Register(config);
-		Ibm_5473_p100_2006ToUtf::Register(config);
 		Java_cp1258_1_3_pToUtf::Register(config);
 		Ibm_1102_p100_2003ToUtf::Register(config);
 		Windows_20936_2000ToUtf::Register(config);
 		Latin_greekToUtf::Register(config);
 		Ibm_943_p15a_2003ToUtf::Register(config);
-		Ibm_1377_p100_2006ToUtf::Register(config);
 		Ibm_286_p100_2003ToUtf::Register(config);
 		Ibm_425_p101_2000ToUtf::Register(config);
 		Ibm_954_p101_2007ToUtf::Register(config);
@@ -1258,7 +1201,6 @@ public:
 		Iso_8859_7_1987ToUtf::Register(config);
 		Ibm_5478_p100_1995ToUtf::Register(config);
 		Java_ascii_1_3_pToUtf::Register(config);
-		Ibm_1364_p100_2007ToUtf::Register(config);
 		Ibm_1147_p100_1997ToUtf::Register(config);
 		Ibm_855_p100_1995ToUtf::Register(config);
 		Ibm_905_p100_1995ToUtf::Register(config);
@@ -1284,7 +1226,6 @@ public:
 		Windows_51949_2000ToUtf::Register(config);
 		Java_koi8_r_1_3_pToUtf::Register(config);
 		Cp1254ToUtf::Register(config);
-		Ibm_1388_p103_2001ToUtf::Register(config);
 		Ibm_9005_x100_2005ToUtf::Register(config);
 		Ibm_33722_p12a_p12a_2004_u2ToUtf::Register(config);
 		Windows_10081_2000ToUtf::Register(config);
@@ -1307,7 +1248,6 @@ public:
 		_8859_4ToUtf::Register(config);
 		Ibm297ToUtf::Register(config);
 		Hpux_cp874_11_11ToUtf::Register(config);
-		Ibm_1371_x100_1999ToUtf::Register(config);
 		Ibm_851_p100_1995ToUtf::Register(config);
 		Iso_8859_9_1999ToUtf::Register(config);
 		Iso_8859_8_1999ToUtf::Register(config);
@@ -1329,7 +1269,6 @@ public:
 		Ibm_858ToUtf::Register(config);
 		Cns_11643_1992ToUtf::Register(config);
 		Ibm_868_p100_1995ToUtf::Register(config);
-		Java_cp939_1_3_pToUtf::Register(config);
 		Ibm_953_p100_2000ToUtf::Register(config);
 		Java_cp278_1_3_pToUtf::Register(config);
 		Hpux_cp1142_11_11ToUtf::Register(config);
@@ -1343,7 +1282,6 @@ public:
 		Java_cp1026_1_3_pToUtf::Register(config);
 		Hpux_cp1148_11_11ToUtf::Register(config);
 		Windows_875_2000ToUtf::Register(config);
-		Java_cp933_1_3_pToUtf::Register(config);
 		Glibc_cp932_2_3_3ToUtf::Register(config);
 		Glibc_ksc5636_2_3_3ToUtf::Register(config);
 		Windows_20127_2000ToUtf::Register(config);
@@ -1358,7 +1296,6 @@ public:
 		Ibm_5348_p100_1997ToUtf::Register(config);
 		Glibc_es_2_3_3ToUtf::Register(config);
 		Ibm_423_p100_1995ToUtf::Register(config);
-		Ibm_1390_p110_2003ToUtf::Register(config);
 		Hpux_cp437_11_11ToUtf::Register(config);
 		Ibm_941_x11a_1996ToUtf::Register(config);
 		Macos_6_10_2ToUtf::Register(config);
@@ -1376,7 +1313,6 @@ public:
 		Windows_20838_2000ToUtf::Register(config);
 		Java_cp861_1_3_pToUtf::Register(config);
 		Ibm_918_p100_1995ToUtf::Register(config);
-		Ibm_930_x120_1999ToUtf::Register(config);
 		Ibm275ToUtf::Register(config);
 		Ibm_837_p100_2011ToUtf::Register(config);
 		Glibc_ibm943_2_3_3ToUtf::Register(config);
@@ -1448,9 +1384,7 @@ public:
 		Macos_519_10_2ToUtf::Register(config);
 		Macos_518_10_2ToUtf::Register(config);
 		Ibm278ToUtf::Register(config);
-		Ibm_1390_p100_1999ToUtf::Register(config);
 		Cp1253ToUtf::Register(config);
-		Ibm_13218_p100_1996ToUtf::Register(config);
 		Windows_20905_2000ToUtf::Register(config);
 		Ibm_838_p100_1995ToUtf::Register(config);
 		Ibm_293_p100_1995ToUtf::Register(config);
@@ -1472,7 +1406,6 @@ public:
 		Ibm_1149_p100_1997ToUtf::Register(config);
 		Iso8859_6ToUtf::Register(config);
 		AsciiToUtf::Register(config);
-		Ibm_935_x110_1999ToUtf::Register(config);
 		Glibc_koi8_r_2_3_3ToUtf::Register(config);
 		Ibm_913_p100_2000ToUtf::Register(config);
 		Ibm_895_p100_1995ToUtf::Register(config);
@@ -1507,10 +1440,8 @@ public:
 		Ibm_33722_p12a_1999ToUtf::Register(config);
 		Glibc_ecma_cyrillic_2_3_3ToUtf::Register(config);
 		Ibm_4933_p100_1996ToUtf::Register(config);
-		Java_cp935_1_3_pToUtf::Register(config);
 		Ibm_9064_p101_2000ToUtf::Register(config);
 		Ibm_891_p100_1995ToUtf::Register(config);
-		Ibm_1364_p110_2007ToUtf::Register(config);
 		Ibm_1385_p100_1997ToUtf::Register(config);
 		Ibm_858_p100_1997ToUtf::Register(config);
 		Osd_ebcdic_df04_15ToUtf::Register(config);
@@ -1533,7 +1464,6 @@ public:
 		Iso_8859_1ToUtf::Register(config);
 		Glibc_ibm874_2_3_3ToUtf::Register(config);
 		Jisx0201_1976_grToUtf::Register(config);
-		Ibm_5035_x120_1999ToUtf::Register(config);
 		Nats_danoToUtf::Register(config);
 		Java_cp285_1_3_pToUtf::Register(config);
 		Ibm_259_p100_1995ToUtf::Register(config);
@@ -1569,7 +1499,6 @@ public:
 		Ibm_1129_p100_1997ToUtf::Register(config);
 		Hpux_cp861_11_11ToUtf::Register(config);
 		Windows_857_2000ToUtf::Register(config);
-		Ibm_5026_x120_1999ToUtf::Register(config);
 		Windows_20105_2000ToUtf::Register(config);
 		Iso_10367_boxToUtf::Register(config);
 		Java_cp942_1_3_pToUtf::Register(config);
@@ -1578,7 +1507,6 @@ public:
 		Iso85ToUtf::Register(config);
 		Macos_0_1_10_2ToUtf::Register(config);
 		Zh_cn_eucToUtf::Register(config);
-		Ibm_1388_p100_2024ToUtf::Register(config);
 		Ibm_5104_x110_1999ToUtf::Register(config);
 		Ibm_1168_p100_2002ToUtf::Register(config);
 		Hpux_cp1143_11_11ToUtf::Register(config);
@@ -1607,7 +1535,6 @@ public:
 		Windows_1148_2000ToUtf::Register(config);
 		Ibm_1041_p100_1995ToUtf::Register(config);
 		Cp865ToUtf::Register(config);
-		Ibm_13676_p102_2001ToUtf::Register(config);
 		Java_cp33722_1_3_pToUtf::Register(config);
 		Ibm_943_p130_1999ToUtf::Register(config);
 		Windows_10082_2000ToUtf::Register(config);
@@ -1636,7 +1563,6 @@ public:
 		Ibm_4951_p100_1995ToUtf::Register(config);
 		Windows_1251_2000ToUtf::Register(config);
 		Ibm_301_p110_1997ToUtf::Register(config);
-		Java_cp930_1_3_pToUtf::Register(config);
 		Osd_ebcdic_df04_1ToUtf::Register(config);
 		Windows_37_2000ToUtf::Register(config);
 		Java_cp1025_1_3_pToUtf::Register(config);
@@ -1660,7 +1586,6 @@ public:
 		Iso8859_15ToUtf::Register(config);
 		Windows_870_2000ToUtf::Register(config);
 		Ibm868ToUtf::Register(config);
-		Ibm_1371_p100_1999ToUtf::Register(config);
 		Ibm_500_p100_1999ToUtf::Register(config);
 		Ibm_1124_x100_1996ToUtf::Register(config);
 		Macos_33_10_5ToUtf::Register(config);
@@ -1684,9 +1609,7 @@ public:
 		Ibm_948_p110_1999ToUtf::Register(config);
 		Ibm_13140_p101_2000ToUtf::Register(config);
 		Windows_20273_2000ToUtf::Register(config);
-		Zh_cn_cp935ToUtf::Register(config);
 		Ibm_941_x110_1996ToUtf::Register(config);
-		Ibm_930_p120_p12a_2006_u2ToUtf::Register(config);
 		Ibm_806_p100_1998ToUtf::Register(config);
 		Mac_ukToUtf::Register(config);
 		Iso_8859_9ToUtf::Register(config);
@@ -1699,7 +1622,6 @@ public:
 		Ibm_1363_p100_1997ToUtf::Register(config);
 		Ibm_927_p100_1995ToUtf::Register(config);
 		InisToUtf::Register(config);
-		Ibm_5035_p120_p12a_2005_u2ToUtf::Register(config);
 		Ibm_1088_p100_1995ToUtf::Register(config);
 		Ebcdic_at_de_aToUtf::Register(config);
 		Ibm_13157_p101_2000ToUtf::Register(config);
@@ -1709,7 +1631,6 @@ public:
 		Osd_ebcdic_df03_irvToUtf::Register(config);
 		Macos_517_10_2ToUtf::Register(config);
 		Macos_516_10_2ToUtf::Register(config);
-		Java_iso2022kr_1_3_pToUtf::Register(config);
 		Windows_51936_2000ToUtf::Register(config);
 		Glibc_it_2_3_3ToUtf::Register(config);
 		Hpux_cp864_11_11ToUtf::Register(config);
@@ -1735,7 +1656,6 @@ public:
 		Ibm_1275_x100_1995ToUtf::Register(config);
 		Ibm904ToUtf::Register(config);
 		Java_sjis_1_3_pToUtf::Register(config);
-		Ibm_931_x120_1999ToUtf::Register(config);
 		_8859_3ToUtf::Register(config);
 		Ibm_21344_p101_2000ToUtf::Register(config);
 		Ibm_1257_p100_1995ToUtf::Register(config);
@@ -1747,7 +1667,6 @@ public:
 		Cp863ToUtf::Register(config);
 		Euc_cnToUtf::Register(config);
 		Ibm_284_p100_1999ToUtf::Register(config);
-		Ibm_939_p120_1999ToUtf::Register(config);
 		Iso81ToUtf::Register(config);
 		Ibm_33722_p12a_p12a_2009_u2ToUtf::Register(config);
 		Glibc_csa_z243_4_1985_2_2_3_3ToUtf::Register(config);
@@ -1776,7 +1695,6 @@ public:
 		Glibc_jus_i_b1_002_2_3_3ToUtf::Register(config);
 		Ibm_835_x100_1995ToUtf::Register(config);
 		Ibm_4904_p101_2000ToUtf::Register(config);
-		Java_iso2022jp_1_3_pToUtf::Register(config);
 		Ibm_9444_p100_p100_2005_msToUtf::Register(config);
 		Ibm_1148_p100_1997ToUtf::Register(config);
 		Java_cp869_1_3_pToUtf::Register(config);
@@ -1790,7 +1708,6 @@ public:
 		Cns11643_1986_2ToUtf::Register(config);
 		Macos_1280_10_2ToUtf::Register(config);
 		Ibm_33722_p120_1999ToUtf::Register(config);
-		Ibm_5486_p100_1999ToUtf::Register(config);
 		Glibc_ibm1133_2_3_3ToUtf::Register(config);
 		Java_cp1112_1_3_pToUtf::Register(config);
 		Zh_tw_eucToUtf::Register(config);
@@ -1798,29 +1715,23 @@ public:
 		Windows_866_2000ToUtf::Register(config);
 		Ibm281ToUtf::Register(config);
 		Macos_7_2_10_2ToUtf::Register(config);
-		Ibm_939_p120_p12a_2005_u2ToUtf::Register(config);
 		Java_cp420_1_3_pToUtf::Register(config);
 		Macos_7_3_10_2ToUtf::Register(config);
 		Hpux_cp1140_11_11ToUtf::Register(config);
-		Ibm_933_x110_1999ToUtf::Register(config);
 		Java_ms932_1_3_pToUtf::Register(config);
 		Ibm_848_p100_1999ToUtf::Register(config);
 		Glibc_sen_850200_b_2_3_3ToUtf::Register(config);
 		Ibm_9030_p100_1995ToUtf::Register(config);
 		Java_ms874_1_3_pToUtf::Register(config);
 		Ibm_813_p100_1995ToUtf::Register(config);
-		Ibm_25546_p100_1997ToUtf::Register(config);
-		Ibm_9580_p110_1999ToUtf::Register(config);
 		Glibc_euc_cn_2_3_3ToUtf::Register(config);
 		Ibm_9448_x100_2005ToUtf::Register(config);
 		Java_iso8859_6_1_3_pToUtf::Register(config);
-		Ibm_5495_p100_1999ToUtf::Register(config);
 		Windows_858_2000ToUtf::Register(config);
 		Iso8859_8ToUtf::Register(config);
 		Ibm_871_p100_1999ToUtf::Register(config);
 		Iso646_usToUtf::Register(config);
 		Ibm_1163_p100_1999ToUtf::Register(config);
-		Ibm_937_x110_1999ToUtf::Register(config);
 		Cp1256ToUtf::Register(config);
 		Ibm_897_p100_1995ToUtf::Register(config);
 		Ibm_880_p100_1995ToUtf::Register(config);
@@ -1861,9 +1772,7 @@ public:
 		Mac_isToUtf::Register(config);
 		Ibm_1129ToUtf::Register(config);
 		Ibm_17221_p100_2001ToUtf::Register(config);
-		Ibm_1377_p100_2008ToUtf::Register(config);
 		Ibm_1154_p100_1999ToUtf::Register(config);
-		Ibm_935_p110_1999ToUtf::Register(config);
 		Windows_1026_2000ToUtf::Register(config);
 		Windows_855_2000ToUtf::Register(config);
 		Windows_20106_2000ToUtf::Register(config);
@@ -1896,13 +1805,11 @@ public:
 		Java_cp863_1_3_pToUtf::Register(config);
 		Ibm_963_p100_1995ToUtf::Register(config);
 		Ibm_833_p100_1995ToUtf::Register(config);
-		Ibm_1388_p110_2000ToUtf::Register(config);
 		Ibm_5470_p100_p100_2005_msToUtf::Register(config);
 		Ibm_21427_p100_1999ToUtf::Register(config);
 		Glibc_iso_8859_8_2_3_3ToUtf::Register(config);
 		Jisx0201_1976_0ToUtf::Register(config);
 		Hpux_cp850_11_11ToUtf::Register(config);
-		Ibm_5026_p120_1999ToUtf::Register(config);
 		Ibm420ToUtf::Register(config);
 		Macos_1286_10_2ToUtf::Register(config);
 		Ibm_5351_p100_1998ToUtf::Register(config);
@@ -1933,7 +1840,6 @@ public:
 		Cp869ToUtf::Register(config);
 		Hpux_roc15_11_11ToUtf::Register(config);
 		Glibc_iso_ir_209_2_3_3ToUtf::Register(config);
-		Ibm_5035_p120_1999ToUtf::Register(config);
 		Hpux_cp1147_11_11ToUtf::Register(config);
 		Ebcdic_esToUtf::Register(config);
 		Ibm_5123_p100_1999ToUtf::Register(config);
@@ -1963,12 +1869,10 @@ public:
 		Ibm_1362_p110_1999ToUtf::Register(config);
 		Ibm905ToUtf::Register(config);
 		Ibm_918_x100_1995ToUtf::Register(config);
-		Ibm_930_p120_1999ToUtf::Register(config);
 		Windows_437_2000ToUtf::Register(config);
 		Ibm_4899_p100_1998ToUtf::Register(config);
 		Iso_5427_extToUtf::Register(config);
 		Windows_1047_2000ToUtf::Register(config);
-		Java_cp937_1_3_pToUtf::Register(config);
 		Ibm_5352_p100_1998ToUtf::Register(config);
 		Ibm_856ToUtf::Register(config);
 		Ibm_9027_x100_1999ToUtf::Register(config);
@@ -2037,7 +1941,6 @@ public:
 		Java_cp850_1_3_pToUtf::Register(config);
 		Glibc_ibm1132_2_3_3ToUtf::Register(config);
 		Ibm_1153_p100_1999ToUtf::Register(config);
-		Ibm_1377_p100_p100_2006_u3ToUtf::Register(config);
 		Java_cp037_1_3_pToUtf::Register(config);
 		Hpux_cp863_11_11ToUtf::Register(config);
 		Ibm_5048_p100_1995ToUtf::Register(config);
@@ -2055,7 +1958,6 @@ public:
 		Glibc_armscii_8_2_3_3ToUtf::Register(config);
 		Solaris_zh_hk_hkscs_5_9ToUtf::Register(config);
 		Windows_20932_2000ToUtf::Register(config);
-		Zh_tw_cp937ToUtf::Register(config);
 		Ibm_1375_p100_2006ToUtf::Register(config);
 		Windows_20290_2000ToUtf::Register(config);
 		Csn_369103ToUtf::Register(config);

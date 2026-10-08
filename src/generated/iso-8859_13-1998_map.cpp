@@ -92,12 +92,22 @@ static const map_entry_encoding iso_8859_13_1998_to_utf8[] = {
     {1, "\xFC", 2, "\xC3\xBC"},     {1, "\xFD", 2, "\xC5\xBC"}, {1, "\xFE", 2, "\xC5\xBE"},
     {1, "\xFF", 3, "\xE2\x80\x99"},
 };
+
+// Aliases of "iso-8859_13-1998": the names Python accepts for its codec "iso8859_13"
+static const char *const iso_8859_13_1998_aliases[] = {"iso-8859-13", "iso8859-13", "iso8859_13", "l7", "latin7"};
+
 void Iso_8859_13_1998ToUtf::Register(const DBConfig &config) {
 	const Iso_8859_13_1998ToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                iso_8859_13_1998_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : iso_8859_13_1998_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      iso_8859_13_1998_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

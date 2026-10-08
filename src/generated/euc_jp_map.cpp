@@ -97,7 +97,7 @@ static const map_entry_encoding EUC_JP_to_utf8[] = {
     {1, "\x59", 1, "\x59"},
     {1, "\x5A", 1, "\x5A"},
     {1, "\x5B", 1, "\x5B"},
-    {1, "\x5C", 2, "\xC2\xA5"},
+    {1, "\x5C", 1, "\x5C"},
     {1, "\x5D", 1, "\x5D"},
     {1, "\x5E", 1, "\x5E"},
     {1, "\x5F", 1, "\x5F"},
@@ -131,7 +131,7 @@ static const map_entry_encoding EUC_JP_to_utf8[] = {
     {1, "\x7B", 1, "\x7B"},
     {1, "\x7C", 1, "\x7C"},
     {1, "\x7D", 1, "\x7D"},
-    {1, "\x7E", 3, "\xE2\x80\xBE"},
+    {1, "\x7E", 1, "\x7E"},
     {1, "\x7F", 1, "\x7F"},
     {2, "\x8E\xA1", 3, "\xEF\xBD\xA1"},
     {2, "\x8E\xA2", 3, "\xEF\xBD\xA2"},
@@ -13143,12 +13143,22 @@ static const map_entry_encoding EUC_JP_to_utf8[] = {
     {2, "\xF4\xA5", 3, "\xE5\x87\x9C"},
     {2, "\xF4\xA6", 3, "\xE7\x86\x99"},
 };
+
+// Aliases of "EUC_JP": the names Python accepts for its codec "euc_jp"
+static const char *const EUC_JP_aliases[] = {"euc-jp", "eucjp", "u-jis", "u_jis", "ujis"};
+
 void Euc_jpToUtf::Register(const DBConfig &config) {
 	const Euc_jpToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                EUC_JP_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : EUC_JP_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      EUC_JP_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

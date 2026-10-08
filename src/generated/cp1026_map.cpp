@@ -70,12 +70,22 @@ static const map_entry_encoding cp1026_to_utf8[] = {
     {1, "\xF8", 1, "\x38"},         {1, "\xF9", 1, "\x39"},     {1, "\xFA", 2, "\xC2\xB3"}, {1, "\xFB", 2, "\xC3\x9B"},
     {1, "\xFC", 1, "\x22"},         {1, "\xFD", 2, "\xC3\x99"}, {1, "\xFE", 2, "\xC3\x9A"}, {1, "\xFF", 2, "\xC2\x9F"},
 };
+
+// Aliases of "cp1026": the names Python accepts for its codec "cp1026"
+static const char *const cp1026_aliases[] = {"1026", "csibm1026", "ibm1026"};
+
 void Cp1026ToUtf::Register(const DBConfig &config) {
 	const Cp1026ToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                cp1026_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : cp1026_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      cp1026_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

@@ -23,10 +23,10 @@ namespace duckdb_encodings {
 class Ibm_1137_pmod_1999ToUtf {
 public:
 	Ibm_1137_pmod_1999ToUtf() {};
-	const idx_t lookup_bytes = 2;
+	const idx_t lookup_bytes = 1;
 	const idx_t max_bytes_per_byte = 3;
 	const string name = "ibm-1137_PMOD-1999";
-	const idx_t size = 265;
+	const idx_t size = 254;
 
 	static void Register(const DBConfig &config);
 };

@@ -26,7 +26,7 @@ public:
 	const idx_t lookup_bytes = 2;
 	const idx_t max_bytes_per_byte = 3;
 	const string name = "ANSI_X3.110";
-	const idx_t size = 401;
+	const idx_t size = 398;
 
 	static void Register(const DBConfig &config);
 };

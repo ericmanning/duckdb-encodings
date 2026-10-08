@@ -92,12 +92,22 @@ static const map_entry_encoding CP775_to_utf8[] = {
     {1, "\xFC", 2, "\xC2\xB3"},     {1, "\xFD", 2, "\xC2\xB2"},     {1, "\xFE", 3, "\xE2\x96\xA0"},
     {1, "\xFF", 2, "\xC2\xA0"},
 };
+
+// Aliases of "CP775": the names Python accepts for its codec "cp775"
+static const char *const CP775_aliases[] = {"775", "cspc775baltic", "ibm775"};
+
 void Cp775ToUtf::Register(const DBConfig &config) {
 	const Cp775ToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                CP775_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : CP775_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      CP775_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

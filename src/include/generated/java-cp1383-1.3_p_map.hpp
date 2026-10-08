@@ -26,7 +26,7 @@ public:
 	const idx_t lookup_bytes = 2;
 	const idx_t max_bytes_per_byte = 3;
 	const string name = "java-Cp1383-1.3_P";
-	const idx_t size = 8994;
+	const idx_t size = 8992;
 
 	static void Register(const DBConfig &config);
 };

@@ -91,12 +91,22 @@ static const map_entry_encoding cp857_to_utf8[] = {
     {1, "\xFC", 2, "\xC2\xB3"},     {1, "\xFD", 2, "\xC2\xB2"},     {1, "\xFE", 3, "\xE2\x96\xA0"},
     {1, "\xFF", 2, "\xC2\xA0"},
 };
+
+// Aliases of "cp857": the names Python accepts for its codec "cp857"
+static const char *const cp857_aliases[] = {"857", "csibm857", "ibm857"};
+
 void Cp857ToUtf::Register(const DBConfig &config) {
 	const Cp857ToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                cp857_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : cp857_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      cp857_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

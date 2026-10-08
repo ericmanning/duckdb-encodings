@@ -2052,7 +2052,7 @@ static const map_entry_encoding java_Cp1381_1_3_P_to_utf8[] = {
     {2, "\xA1\xA1", 3, "\xE3\x80\x80"},
     {2, "\xA1\xA2", 3, "\xE3\x80\x81"},
     {2, "\xA1\xA3", 3, "\xE3\x80\x82"},
-    {2, "\xA1\xA4", 3, "\xE7\xAB\x82"},
+    {2, "\xA1\xA4", 3, "\xE3\x83\xBB"},
     {2, "\xA1\xA5", 2, "\xCB\x89"},
     {2, "\xA1\xA6", 2, "\xCB\x87"},
     {2, "\xA1\xA7", 2, "\xC2\xA8"},

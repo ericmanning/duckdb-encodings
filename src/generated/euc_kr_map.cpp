@@ -8358,12 +8358,24 @@ static const map_entry_encoding EUC_KR_to_utf8[] = {
     {2, "\xFD\xFD", 3, "\xE7\xBE\xB2"},
     {2, "\xFD\xFE", 3, "\xE8\xA9\xB0"},
 };
+
+// Aliases of "EUC_KR": the names Python accepts for its codec "euc_kr"
+static const char *const EUC_KR_aliases[] = {
+    "euc-kr",         "euckr",     "korean",  "ks-c-5601", "ks-c-5601-1987", "ks-x-1001",   "ks_c_5601",
+    "ks_c_5601_1987", "ks_x_1001", "ksc5601", "ksx1001",   "x-mac-korean",   "x_mac_korean"};
+
 void Euc_krToUtf::Register(const DBConfig &config) {
 	const Euc_krToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                EUC_KR_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : EUC_KR_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      EUC_KR_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

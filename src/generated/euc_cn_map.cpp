@@ -179,7 +179,6 @@ static const map_entry_encoding EUC_CN_to_utf8[] = {
     {2, "\xA1\xCC", 3, "\xE2\x88\x9A"},
     {2, "\xA1\xCD", 3, "\xE2\x8A\xA5"},
     {2, "\xA1\xCF", 3, "\xE2\x88\xA0"},
-    {2, "\xA1\xD0", 3, "\xE2\x8C\x93"},
     {2, "\xA1\xD1", 3, "\xE2\x8A\x99"},
     {2, "\xA1\xD2", 3, "\xE2\x88\xAB"},
     {2, "\xA1\xD3", 3, "\xE2\x88\xAE"},
@@ -737,7 +736,7 @@ static const map_entry_encoding EUC_CN_to_utf8[] = {
     {2, "\xA8\xE7", 3, "\xE3\x84\xA7"},
     {2, "\xA8\xE8", 3, "\xE3\x84\xA8"},
     {2, "\xA8\xE9", 3, "\xE3\x84\xA9"},
-    {2, "\xA9\xA4", 3, "\xE2\x95\x8B"},
+    {2, "\xA9\xA4", 3, "\xE2\x94\x80"},
     {2, "\xB0\xA1", 3, "\xE5\x95\x8A"},
     {2, "\xB0\xA2", 3, "\xE9\x98\xBF"},
     {2, "\xB0\xA3", 3, "\xE5\x9F\x83"},
@@ -7502,12 +7501,26 @@ static const map_entry_encoding EUC_CN_to_utf8[] = {
     {2, "\xF7\xFD", 3, "\xE9\xBC\xBE"},
     {2, "\xF7\xFE", 3, "\xE9\xBD\x84"},
 };
+
+// Aliases of "EUC_CN": the names Python accepts for its codec "gb2312"
+static const char *const EUC_CN_aliases[] = {"chinese",     "csiso58gb231280",    "euc-cn",
+                                             "euccn",       "eucgb2312-cn",       "eucgb2312_cn",
+                                             "gb2312",      "gb2312-1980",        "gb2312-80",
+                                             "gb2312_1980", "gb2312_80",          "iso-ir-58",
+                                             "iso_ir_58",   "x-mac-simp-chinese", "x_mac_simp_chinese"};
+
 void Euc_cnToUtf::Register(const DBConfig &config) {
 	const Euc_cnToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                EUC_CN_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : EUC_CN_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      EUC_CN_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

@@ -24,7 +24,7 @@ class Windows_20127_2000ToUtf {
 public:
 	Windows_20127_2000ToUtf() {};
 	const idx_t lookup_bytes = 1;
-	const idx_t max_bytes_per_byte = 3;
+	const idx_t max_bytes_per_byte = 1;
 	const string name = "windows-20127-2000";
 	const idx_t size = 128;
 

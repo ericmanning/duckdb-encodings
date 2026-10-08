@@ -1,0 +1,16 @@
+# name: test/sql/euc_tw.test
+# description: EUC-TW: the euc-tw alias must decode all CNS 11643 planes (ICU's ibm-964 table), not only plane 1
+# group: [sql]
+
+require encodings
+
+foreach enc euc-tw ibm-964_P110-1999
+
+query II
+FROM read_csv('data/euc_tw/planes.csv', encoding='${enc}')
+----
+plane1	０
+bopomofo	ㄅ
+plane2	乂
+
+endloop

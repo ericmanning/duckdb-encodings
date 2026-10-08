@@ -1,0 +1,53 @@
+# name: test/sql/encoding_aliases.test
+# description: Issue #18 - encoding names as produced by chardet / Python codecs must be accepted as aliases
+# group: [sql]
+
+require encodings
+
+statement ok
+COPY (SELECT 'test' AS a, 'data' AS b) TO '__TEST_DIR__/aliases.csv' (FORMAT CSV, HEADER false);
+
+# Names exactly as chardet reports them (mixed case, '-' separators)
+foreach enc windows-1250 windows-1251 windows-1252 windows-1253 windows-1254 windows-1255 windows-1256 windows-1257 windows-1258 ISO-8859-1 ISO-8859-2 ISO-8859-4 ISO-8859-5 ISO-8859-7 ISO-8859-8 ISO-8859-9 ISO-8859-13 ISO-8859-15 KOI8-R MacRoman MacCyrillic IBM855 IBM866 TIS-620 EUC-JP EUC-KR SHIFT_JIS CP932 CP949 Johab Big5 GB2312 GBK GB18030 EUC-TW
+
+query II
+FROM read_csv('__TEST_DIR__/aliases.csv', encoding='${enc}', header=false)
+----
+test	data
+
+endloop
+
+# Python canonical codec names (codecs.lookup(name).name) and common aliases
+foreach enc cp1252 iso8859-4 iso8859_4 latin1 l4 koi8-r mac-roman macintosh sjis euc_kr euckr cp936 ms932 tis620 us-ascii
+
+query II
+FROM read_csv('__TEST_DIR__/aliases.csv', encoding='${enc}', header=false)
+----
+test	data
+
+endloop
+
+# An alias decodes through exactly the same table as the canonical name
+query I
+SELECT (SELECT list(a) FROM read_csv('data/test_cp1252.csv', encoding='windows-1252', header=0, quote='', auto_detect=false, columns={'a':'varchar'}, delim='', strict_mode=false))
+     = (SELECT list(a) FROM read_csv('data/test_cp1252.csv', encoding='CP1252', header=0, quote='', auto_detect=false, columns={'a':'varchar'}, delim='', strict_mode=false))
+----
+true
+
+query I
+SELECT (SELECT list(a) FROM read_csv('data/test_iso8859_4.csv', encoding='ISO-8859-4', header=0, quote='', auto_detect=false, columns={'a':'varchar'}, delim='', strict_mode=false))
+     = (SELECT list(a) FROM read_csv('data/test_iso8859_4.csv', encoding='ISO8859_4', header=0, quote='', auto_detect=false, columns={'a':'varchar'}, delim='', strict_mode=false))
+----
+true
+
+query I
+SELECT (SELECT list(a) FROM read_csv('data/test_euc_kr.csv', encoding='EUC-KR', header=0, quote='', auto_detect=false, columns={'a':'varchar'}, delim='', strict_mode=false))
+     = (SELECT list(a) FROM read_csv('data/test_euc_kr.csv', encoding='EUC_KR', header=0, quote='', auto_detect=false, columns={'a':'varchar'}, delim='', strict_mode=false))
+----
+true
+
+query I
+SELECT (SELECT list(a) FROM read_csv('data/test_windows-936-2000.csv', encoding='GBK', header=0, quote='', auto_detect=false, columns={'a':'varchar'}, delim='', strict_mode=false))
+     = (SELECT list(a) FROM read_csv('data/test_windows-936-2000.csv', encoding='windows-936-2000', header=0, quote='', auto_detect=false, columns={'a':'varchar'}, delim='', strict_mode=false))
+----
+true

@@ -30702,7 +30702,7 @@ static const map_entry_encoding gb18030_to_utf8[] = {
     {2, "\xFE\x56", 3, "\xE3\x91\x87"},
     {2, "\xFE\x57", 3, "\xE2\xBA\x88"},
     {2, "\xFE\x58", 3, "\xE2\xBA\x8B"},
-    {2, "\xFE\x59", 3, "\xEE\xA0\x9E"},
+    {2, "\xFE\x59", 3, "\xE9\xBE\xB4"},
     {2, "\xFE\x5A", 3, "\xE3\x96\x9E"},
     {2, "\xFE\x5B", 3, "\xE3\x98\x9A"},
     {2, "\xFE\x5C", 3, "\xE3\x98\x8E"},
@@ -30710,19 +30710,19 @@ static const map_entry_encoding gb18030_to_utf8[] = {
     {2, "\xFE\x5E", 3, "\xE2\xBA\x97"},
     {2, "\xFE\x5F", 3, "\xE3\xA5\xAE"},
     {2, "\xFE\x60", 3, "\xE3\xA4\x98"},
-    {2, "\xFE\x61", 3, "\xEE\xA0\xA6"},
+    {2, "\xFE\x61", 3, "\xE9\xBE\xB5"},
     {2, "\xFE\x62", 3, "\xE3\xA7\x8F"},
     {2, "\xFE\x63", 3, "\xE3\xA7\x9F"},
     {2, "\xFE\x64", 3, "\xE3\xA9\xB3"},
     {2, "\xFE\x65", 3, "\xE3\xA7\x90"},
-    {2, "\xFE\x66", 3, "\xEE\xA0\xAB"},
-    {2, "\xFE\x67", 3, "\xEE\xA0\xAC"},
+    {2, "\xFE\x66", 3, "\xE9\xBE\xB6"},
+    {2, "\xFE\x67", 3, "\xE9\xBE\xB7"},
     {2, "\xFE\x68", 3, "\xE3\xAD\x8E"},
     {2, "\xFE\x69", 3, "\xE3\xB1\xAE"},
     {2, "\xFE\x6A", 3, "\xE3\xB3\xA0"},
     {2, "\xFE\x6B", 3, "\xE2\xBA\xA7"},
     {2, "\xFE\x6C", 4, "\xF0\xA1\x97\x97"},
-    {2, "\xFE\x6D", 3, "\xEE\xA0\xB2"},
+    {2, "\xFE\x6D", 3, "\xE9\xBE\xB8"},
     {2, "\xFE\x6E", 3, "\xE2\xBA\xAA"},
     {2, "\xFE\x6F", 3, "\xE4\x81\x96"},
     {2, "\xFE\x70", 3, "\xE4\x85\x9F"},
@@ -30739,7 +30739,7 @@ static const map_entry_encoding gb18030_to_utf8[] = {
     {2, "\xFE\x7B", 3, "\xE4\x93\x96"},
     {2, "\xFE\x7C", 3, "\xE4\x99\xA1"},
     {2, "\xFE\x7D", 3, "\xE4\x99\x8C"},
-    {2, "\xFE\x7E", 3, "\xEE\xA1\x83"},
+    {2, "\xFE\x7E", 3, "\xE9\xBE\xB9"},
     {2, "\xFE\x80", 3, "\xE4\x9C\xA3"},
     {2, "\xFE\x81", 3, "\xE4\x9C\xA9"},
     {2, "\xFE\x82", 3, "\xE4\x9D\xBC"},
@@ -30756,7 +30756,7 @@ static const map_entry_encoding gb18030_to_utf8[] = {
     {2, "\xFE\x8D", 3, "\xE4\xA6\x9B"},
     {2, "\xFE\x8E", 3, "\xE4\xA6\xB7"},
     {2, "\xFE\x8F", 3, "\xE4\xA6\xB6"},
-    {2, "\xFE\x90", 3, "\xEE\xA1\x94"},
+    {2, "\xFE\x90", 3, "\xE9\xBE\xBA"},
     {2, "\xFE\x91", 4, "\xF0\xA4\x87\xBE"},
     {2, "\xFE\x92", 3, "\xE4\xB2\xA3"},
     {2, "\xFE\x93", 3, "\xE4\xB2\x9F"},
@@ -30772,7 +30772,7 @@ static const map_entry_encoding gb18030_to_utf8[] = {
     {2, "\xFE\x9D", 3, "\xE4\xB4\x98"},
     {2, "\xFE\x9E", 3, "\xE4\xB4\x99"},
     {2, "\xFE\x9F", 3, "\xE4\xB6\xAE"},
-    {2, "\xFE\xA0", 3, "\xEE\xA1\xA4"},
+    {2, "\xFE\xA0", 3, "\xE9\xBE\xBB"},
     {2, "\xFE\xA1", 3, "\xEE\x91\xA8"},
     {2, "\xFE\xA2", 3, "\xEE\x91\xA9"},
     {2, "\xFE\xA3", 3, "\xEE\x91\xAA"},
@@ -30868,12 +30868,22 @@ static const map_entry_encoding gb18030_to_utf8[] = {
     {2, "\xFE\xFD", 3, "\xEE\x93\x84"},
     {2, "\xFE\xFE", 3, "\xEE\x93\x85"},
 };
+
+// Aliases of "gb18030": the names Python accepts for its codec "gb18030"
+static const char *const gb18030_aliases[] = {"gb18030-2000", "gb18030_2000"};
+
 void Gb18030ToUtf::Register(const DBConfig &config) {
 	const Gb18030ToUtf generated_function;
 	const EncodingFunction function(generated_function.name, GeneratedEncodedFunction::Decode,
 	                                generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
 	                                gb18030_to_utf8, generated_function.size);
 	config.RegisterEncodeFunction(function);
+	for (const auto *alias : gb18030_aliases) {
+		const EncodingFunction alias_function(alias, GeneratedEncodedFunction::Decode,
+		                                      generated_function.max_bytes_per_byte, generated_function.lookup_bytes,
+		                                      gb18030_to_utf8, generated_function.size);
+		config.RegisterEncodeFunction(alias_function);
+	}
 }
 } // namespace duckdb_encodings
 } // namespace duckdb

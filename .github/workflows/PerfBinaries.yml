@@ -4,7 +4,7 @@
 # .duckdb_extension files LOAD into the official release CLI (exact version
 # match is required for C++ extensions). Each run uploads one artifact per OS
 # containing BOTH the patched build (this branch) and the baseline build
-# (src/generated_encoded_functions.cpp reverted to origin/main).
+# (src/generated_encoded_functions.cpp reverted to duckdb/duckdb-encodings main).
 #
 # Usage in a VM: download the official DUCKDB_RELEASE CLI, then
 #   duckdb -unsigned
@@ -28,11 +28,11 @@ concurrency:
 env:
   GEN: ninja
   EXT_FLAGS: -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
-  DUCKDB_RELEASE: v1.5.5
+  DUCKDB_RELEASE: v1.5.6
   # Without this the shallow tag fetch makes git describe fail inside the
   # submodule and the build stamps v0.0.1, which the release CLI refuses to
   # load (exact version match). The Makefile forwards this to CMake.
-  OVERRIDE_GIT_DESCRIBE: v1.5.5
+  OVERRIDE_GIT_DESCRIBE: v1.5.6
 
 jobs:
   linux:
@@ -63,10 +63,10 @@ jobs:
           mkdir -p staging/patched staging/baseline
           cp build/release/extension/encodings/encodings.duckdb_extension staging/patched/
 
-      - name: Build baseline (decode file reverted to main)
+      - name: Build baseline (decode file reverted to upstream main)
         run: |
-          git fetch origin main
-          git checkout origin/main -- src/generated_encoded_functions.cpp
+          git fetch https://github.com/duckdb/duckdb-encodings main
+          git checkout FETCH_HEAD -- src/generated_encoded_functions.cpp
           make release
           cp build/release/extension/encodings/encodings.duckdb_extension staging/baseline/
           git checkout HEAD -- src/generated_encoded_functions.cpp
@@ -119,11 +119,11 @@ jobs:
           mkdir -p staging/patched staging/baseline
           cp build/release/extension/encodings/encodings.duckdb_extension staging/patched/
 
-      - name: Revert decode file to main
+      - name: Revert decode file to upstream main
         shell: bash
         run: |
-          git fetch origin main
-          git checkout origin/main -- src/generated_encoded_functions.cpp
+          git fetch https://github.com/duckdb/duckdb-encodings main
+          git checkout FETCH_HEAD -- src/generated_encoded_functions.cpp
 
       - name: Build baseline
         shell: cmd

@@ -26,7 +26,7 @@ public:
 	const idx_t lookup_bytes = 1;
 	const idx_t max_bytes_per_byte = 3;
 	const string name = "macos-21-10.5";
-	const idx_t size = 250;
+	const idx_t size = 228;
 
 	static void Register(const DBConfig &config);
 };

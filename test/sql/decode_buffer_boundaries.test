@@ -1,0 +1,22 @@
+# name: test/sql/decode_buffer_boundaries.test
+# description: Decoding must not depend on where the decoded buffer fills up
+# group: [sql]
+
+require encodings
+
+# INIS_8: 0x3A decodes to a 2-byte UTF-8 character (α), 0x7A to Σ, and 0x41 has no mapping (passed through as 'A').
+# With buffer_size=64 the decoded buffer is exactly full when the unmapped byte of line 13 is reached.
+foreach buffer_size 64 65 66 100 1000
+
+query I
+SELECT string_agg(v, '|') FROM read_csv('data/boundaries/inis_8_passthrough.csv', encoding='INIS_8', header=false, delim='', quote='', escape='', columns={'v': 'VARCHAR'}, buffer_size=${buffer_size})
+----
+αα|αα|αα|αα|αα|αα|αα|αα|αα|αα|αα|αα|ααA|ΣΣ|ΣΣ|ΣΣ|ΣΣ
+
+endloop
+
+# Stateful (SO/SI) EBCDIC tables cannot be decoded with a stateless table lookup and are not registered
+statement error
+FROM read_csv('data/boundaries/inis_8_passthrough.csv', encoding='ibm-939_X120-1999')
+----
+does not support the encoding

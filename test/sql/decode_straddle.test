@@ -4,6 +4,10 @@
 
 require encodings
 
+# Fork targets DuckDB v1.5.6: these rely on the CSV encoder carry-over fix that only ships in DuckDB v2.0
+# (duckdb/duckdb#20598), so they fail on v1.5.6 regardless of this extension's decoder
+mode skip
+
 # Each file places one multi-byte character across the end of the first 1024-byte encoded buffer
 
 query I

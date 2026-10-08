@@ -4,6 +4,10 @@
 
 require encodings
 
+# Fork targets DuckDB v1.5.6: these rely on the CSV encoder carry-over fix that only ships in DuckDB v2.0
+# (duckdb/duckdb#20598), so they fail on v1.5.6 regardless of this extension's decoder
+mode skip
+
 # A one byte buffer rejects every line but still has to decode the whole file
 query I
 SELECT string_agg(v, '') FROM read_csv('data/boundaries/tiny_gb18030.csv', encoding='gb18030', buffer_size=1, header=true, columns={'v': 'VARCHAR'}, auto_detect=false, ignore_errors=true)
